@@ -21,10 +21,10 @@ JSON structure is as followed:
         "version": "5.0",
         "chapter": [
             {
-                "name": "XXXXX",
+                "name": "Week 1",
                 "sequential": [
                     {
-                        "name": "Info tabs",
+                        "name": "Day 1",
                         "vertical": [
                             {
                                 "name": "Foo",
