@@ -1,17 +1,20 @@
 #!/usr/bin/env node
 
 //
-// ./bin/mdyaml pt https://docs.google.com/spreadsheets/d/e/2PACX-1vTj9crFXFRl9MjP5ibW7210C-cmkdPI1EgzQK1rTYN0SMFpSGe0piWtf40H3S-LDtPVfbYnaDOpvW_N/pub?output=csv
+// node index.js pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
 //
 
+const os = require('os')
 const exec = require('util').promisify(require('child_process').exec)
 
+const uuid = require('uuid')
+
 const ftpt = process.argv[2] || 'ft'
-const csvUrl = process.argv[3] || "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj9crFXFRl9MjP5ibW7210C-cmkdPI1EgzQK1rTYN0SMFpSGe0piWtf40H3S-LDtPVfbYnaDOpvW_N/pub?output=csv"
-const tmpfile = `/tmp/foo.csv`
+const csvUrl = process.argv[3] || "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
+const tmpfile = `${os.tmpdir()}/${uuid.v4()}`
 
 async function main() {
-  await exec(`curl ${csvUrl} >${tmpfile}`)
+  await exec(`curl --fail "${csvUrl}" >${tmpfile}`)
 
   const {stdout, stderr} = await exec(`npx csvtojson ${tmpfile}`)
   //console.log(stdout);
@@ -49,7 +52,7 @@ async function main() {
     seqs[el[`${ftpt}_seq`]] || (seqs[el[`${ftpt}_seq`]] = {})
     seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] || (seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] = [])
 
-    if (el.active === 'TRUE') {
+    if (el[`${ftpt}_active`] === 'TRUE') {
       seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]].push({
         name: el.name,
         html: [{
