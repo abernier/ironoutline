@@ -49,10 +49,10 @@ async function main() {
 
   const seqs = {};
   json.forEach(el => {
-    seqs[el[`${ftpt}_seq`]] || (seqs[el[`${ftpt}_seq`]] = {})
-    seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] || (seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] = [])
-
     if (el[`${ftpt}_active`] === 'TRUE') {
+      seqs[el[`${ftpt}_seq`]] || (seqs[el[`${ftpt}_seq`]] = {})
+      seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] || (seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] = [])
+
       seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]].push({
         name: el.name,
         html: [{
