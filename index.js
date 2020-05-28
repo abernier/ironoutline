@@ -53,6 +53,20 @@ async function main() {
   json = json.filter(el => el[`${ftpt}_active`] === 'TRUE')
 
   //
+  // filter lessons that are not assigned to seq or vert
+  //
+  json = json.filter(el => {
+    const seq_index = el[`${ftpt}_seq_index`]
+    const vert_index = el[`${ftpt}_vert_index`]
+    
+    return (
+      seq_index.length >0 && Number(seq_index) >= 0 // test length because Number("") gives 0
+      &&
+      vert_index.length >0 && Number(vert_index) >= 0
+    )
+  })
+
+  //
   // order by sort by [seq_index, vert_index, order] ASC
   //
   json.sort(function (a, b) {
