@@ -48,21 +48,49 @@ async function main() {
   */
 
   const seqs = {};
-  json.forEach(el => {
-    if (el[`${ftpt}_active`] === 'TRUE') {
-      seqs[el[`${ftpt}_seq`]] || (seqs[el[`${ftpt}_seq`]] = {})
-      seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] || (seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] = [])
 
-      const tag = el.tag ? `[${el.tag}] ` : '';
+  // filter not active lessons
+  json = json.filter(el => el[`${ftpt}_active`] === 'TRUE')
 
-      seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]].push({
-        name: `${tag}${el.name}`,
-        html: [{
-          file: el.file
-        }]
-      })
-    }
+  //
+  // order by sort by [seq_index, vert_index, order] ASC
+  //
+  json.sort(function (a, b) {
+    // see: https://stackoverflow.com/a/2784265/133327
+
+    const seq_index1 = Number(a[`${ftpt}_seq_index`])
+    const seq_index2 = Number(b[`${ftpt}_seq_index`])
+
+    const vert_index1 = Number(a[`${ftpt}_vert_index`])
+    const vert_index2 = Number(b[`${ftpt}_vert_index`])
+
+    const order1 = Number(a[`${ftpt}_order`])
+    const order2 = Number(b[`${ftpt}_order`])
     
+    if (seq_index1 < seq_index2) return -1;
+    if (seq_index1 > seq_index2) return 1;
+
+    if (vert_index1 < vert_index2) return -1;
+    if (vert_index1 > vert_index2) return 1;
+
+    if (order1 < order2) return -1;
+    if (order1 > order2) return 1;
+
+    return 0;
+  })
+
+  json.forEach(el => {
+    seqs[el[`${ftpt}_seq`]] || (seqs[el[`${ftpt}_seq`]] = {})
+    seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] || (seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] = [])
+
+    const tag = el.tag ? `[${el.tag}] ` : '';
+
+    seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]].push({
+      name: `${tag}${el.name}`,
+      html: [{
+        file: el.file
+      }]
+    })
   });
   //console.log('seqs', seqs)
 
