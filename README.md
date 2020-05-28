@@ -1,3 +1,5 @@
+[![NPM version](https://img.shields.io/npm/v/uest.svg?style=flat)](https://www.npmjs.com/package/ironoutline)
+
 # Ironoutline
 
 Generates an `index.json` file for [`md2oedx`](https://github.com/ironhack/md2oedx) from a CSV [spreadsheet](https://docs.google.com/spreadsheets/d/1RiieTGx6PQWkyU52yTXEWN-u5-8njN1zfdXLWm2Nn2c/edit):
