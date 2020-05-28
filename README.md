@@ -9,7 +9,7 @@ $ npx ironoutline pt https://docs.google.com/spreadsheets/d/e/2PACX-1vTj9crFXFRl
 NB: The json file is directly printed to stdout: to save it to disk, remember to redirect the stdout `> myoutline.json`.
 
 JSON structure is as followed:
-```json
+```js
 {
     "course": {
         "name": "WDPT",
