@@ -53,8 +53,10 @@ async function main() {
       seqs[el[`${ftpt}_seq`]] || (seqs[el[`${ftpt}_seq`]] = {})
       seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] || (seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] = [])
 
+      const tag = el.tag ? `[${el.tag}] ` : '';
+
       seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]].push({
-        name: el.name,
+        name: `${tag}${el.name}`,
         html: [{
           file: el.file
         }]
