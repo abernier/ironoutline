@@ -1,7 +1,10 @@
 {
   "name": "ironoutline",
   "version": "0.1.0",
-  "bin": "./index.js",
+  "bin": "./index.js","repository": {
+    "type": "git",
+    "url": "https://github.com/abernier/ironoutline.git"
+  },
   "dependencies": {
     "csvtojson": "^2.0.10",
     "uuid": "^8.1.0"
