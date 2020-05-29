@@ -18,7 +18,7 @@ var argv = require('minimist')(process.argv.slice(2));
 const ftpt = argv._[0] || 'ft'
 const csvUrl = argv._[1] || "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
 const start = argv.start
-const hollidays = argv.hollidays.split(',')
+const hollidays = argv.hollidays && argv.hollidays.split(',')
 const help = argv.help
 
 const man = `
@@ -125,7 +125,11 @@ async function main() {
     return 0;
   })
 
-  const workingDays = schedule(ftpt, start, hollidays)
+
+  let workingDays = []
+  if (start) {
+    workingDays = schedule(ftpt, start, hollidays)
+  }
 
   json.forEach((el, i) => {
     const seq = el[`${ftpt}_seq`]
