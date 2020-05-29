@@ -1,6 +1,6 @@
 {
   "name": "ironoutline",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "bin": "./index.js",
   "repository": {
     "type": "git",
