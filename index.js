@@ -8,9 +8,18 @@ const os = require('os')
 const exec = require('util').promisify(require('child_process').exec)
 
 const uuid = require('uuid')
+const moment = require('moment')
 
-const ftpt = process.argv[2] || 'ft'
-const csvUrl = process.argv[3] || "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
+const schedule = require('./schedule')
+
+var argv = require('minimist')(process.argv.slice(2));
+// console.log(argv);
+
+const ftpt = argv._[0] || 'ft'
+const csvUrl = argv._[1] || "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
+const start = argv.start
+const hollidays = argv.hollidays.split(',')
+
 const tmpfile = `${os.tmpdir()}/${uuid.v4()}`
 
 async function main() {
@@ -93,20 +102,28 @@ async function main() {
     return 0;
   })
 
-  json.forEach(el => {
-    seqs[el[`${ftpt}_seq`]] || (seqs[el[`${ftpt}_seq`]] = {})
-    seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] || (seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]] = [])
+  const workingDays = schedule(ftpt, start, hollidays)
+
+  json.forEach((el, i) => {
+    const seq = el[`${ftpt}_seq`]
+    let vert = el[`${ftpt}_vert`]
+    
+    seqs[seq] || (seqs[seq] = {})
+
+    if (!(vert in seqs[seq])) {
+      seqs[seq][vert] = [];
+    }
 
     const tag = el.tag ? `[${el.tag}] ` : '';
 
-    seqs[el[`${ftpt}_seq`]][el[`${ftpt}_vert`]].push({
+    seqs[seq][vert].push({
       name: `${tag}${el.name}`,
       html: [{
         file: el.file
       }]
     })
   });
-  //console.log('seqs', seqs)
+  // console.log('seqs', seqs)
 
   //
   // 2nd pass
@@ -128,6 +145,8 @@ async function main() {
   ]
   */
 
+  let day_index = 0;
+
   Object.keys(seqs).forEach(k => {
     const o1 = {
       name: k, // 'Tips & Tricks for success'
@@ -135,8 +154,19 @@ async function main() {
     }
 
     Object.keys(seqs[k]).forEach(l => {
+      // Upgrade "Halday X" by "Tue, 18th May" from `workingDays`
+      let name;
+      if (l.match({ft: /^Day/, pt: /^Halfday/}[ftpt]) && day_index < workingDays.length) {
+        const strDate = moment(workingDays[day_index]).format("ddd, Do MMM")
+        //console.log(day_index, seq, vert, strDate)
+
+        name = strDate
+
+        day_index++
+      }
+
       const o2 = {
-        name: l, // Info tabs
+        name: (name || l), // Info tabs
         vertical: []
       }
 
