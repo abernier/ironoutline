@@ -180,7 +180,7 @@ async function main() {
       // Upgrade "Halday X" by "Tue, 18th May" from `workingDays`
       let name;
       if (l.match({ft: /^Day/, pt: /^Halfday/}[ftpt]) && day_index < workingDays.length) {
-        const strDate = moment(workingDays[day_index]).format("ddd, Do MMM")
+        const strDate = moment(workingDays[day_index]).format("ddd, MMM Do")
         //console.log(day_index, seq, vert, strDate)
 
         name = strDate
