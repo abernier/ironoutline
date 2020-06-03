@@ -4,7 +4,21 @@ Generates an `index.json` file for [`md2oedx`](https://github.com/ironhack/md2oe
 
 ```sh
 $ npx ironoutline --help
+Usage: npx ironoutline [ PTFT ] [ "CSV_URL" ] [ --start=START_DATE --hollidays=HOLLIDAYS ]
 
+Generates JSON outline for md2oedx from a CSV.
+
+Example: npx ironoutline pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv" --start=2020-06-02 --hollidays=2020-06-20,2020-07-04,2020-07-14,2020-08-11,2020-08-13,2020-08-15,2020-08-18,2020-08-20,2020-08-22,2020-09-19,2020-10-17,2020-11-10,2020-11-21
+
+Options:
+
+  PTFT:       ft or pt (Default: ft)
+  
+  CSV_URL:    A CSV URL where the outline is configured (Default: https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv)
+
+  START_DATE: The day in the format YYYY-MM-DD when the course begins
+
+  HOLLIDAYS:  A comma-separated list of days in the format YYYY-MM-DD for days-off
 ```
 
 # Example
