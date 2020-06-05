@@ -38,7 +38,7 @@ Options:
 
   START_DATE: The day in the format YYYY-MM-DD when the course begins
 
-  HOLLIDAYS:  A comma-separated list of days in the format YYYY-MM-DD for days-off  
+  HOLLIDAYS:  A comma-separated list of days in the format YYYY-MM-DD for days-off
 `
 if (help) {
   console.log(man);

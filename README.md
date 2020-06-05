@@ -4,7 +4,7 @@ Generates an `index.json` file for [`md2oedx`](https://github.com/ironhack/md2oe
 
 ```sh
 $ npx ironoutline --help
-Usage: npx ironoutline [ PTFT ] [ "CSV_URL" ] [ --start=START_DATE --hollidays=HOLLIDAYS ]
+Usage: npx ironoutline [ PTFT ] [ "CSV_URL" | CSV_PATH ] [ --start=START_DATE --hollidays=HOLLIDAYS ]
 
 Generates JSON outline for md2oedx from a CSV.
 
@@ -15,6 +15,7 @@ Options:
   PTFT:       ft or pt (Default: ft)
   
   CSV_URL:    A CSV URL where the outline is configured (Default: https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv)
+  CSV_PATH:   A CSV file path
 
   START_DATE: The day in the format YYYY-MM-DD when the course begins
 
@@ -25,6 +26,10 @@ Options:
 
 ```sh
 $ npx ironoutline pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
+```
+
+```sh
+$ npx ironoutline ft ~/Downloads/outline-wdpt202006.csv
 ```
 
 NB: The json file is directly printed to stdout: to save it to disk, remember to redirect the stdout `> myoutline.json`.
