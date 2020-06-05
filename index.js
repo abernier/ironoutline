@@ -6,6 +6,7 @@
 
 const os = require('os')
 const exec = require('util').promisify(require('child_process').exec)
+const execFile = require('util').promisify(require('child_process').execFile)
 
 const uuid = require('uuid')
 const moment = require('moment')
@@ -16,23 +17,24 @@ var argv = require('minimist')(process.argv.slice(2));
 // console.log(argv);
 
 const ftpt = argv._[0] || 'ft'
-const csvUrl = argv._[1] || "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
+const csvUrlOrPath = argv._[1] || "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
 const start = argv.start
 const hollidays = argv.hollidays && argv.hollidays.split(',')
 const help = argv.help
 
 const man = `
-Usage: npx ironoutline [ PTFT ] [ "CSV_URL" ] [ --start=START_DATE --hollidays=HOLLIDAYS ]
+Usage: npx ironoutline [ PTFT ] [ "CSV_URL" | CSV_PATH ] [ --start=START_DATE --hollidays=HOLLIDAYS ]
 
 Generates JSON outline for md2oedx from a CSV.
 
-Example: npx ironoutline pt "${csvUrl}" --start=2020-06-02 --hollidays=2020-06-20,2020-07-04,2020-07-14,2020-08-11,2020-08-13,2020-08-15,2020-08-18,2020-08-20,2020-08-22,2020-09-19,2020-10-17,2020-11-10,2020-11-21
+Example: npx ironoutline pt "${csvUrlOrPath}" --start=2020-06-02 --hollidays=2020-06-20,2020-07-04,2020-07-14,2020-08-11,2020-08-13,2020-08-15,2020-08-18,2020-08-20,2020-08-22,2020-09-19,2020-10-17,2020-11-10,2020-11-21
 
 Options:
 
   PTFT:       ft or pt (Default: ft)
   
   CSV_URL:    A CSV URL where the outline is configured (Default: https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv)
+  CSV_PATH:   A CSV file path
 
   START_DATE: The day in the format YYYY-MM-DD when the course begins
 
@@ -43,12 +45,30 @@ if (help) {
   process.exit(0);
 }
 
+function isUrl(str) {
+  try {
+    new URL(str)
+  } catch(e) {
+    return false;
+  }
+
+  return true;
+}
+
 const tmpfile = `${os.tmpdir()}/${uuid.v4()}`
 
 async function main() {
-  await exec(`curl --fail "${csvUrl}" >${tmpfile}`)
+  let csv;
 
-  const {stdout, stderr} = await exec(`npx csvtojson ${tmpfile}`)
+  if (isUrl(csvUrlOrPath)) {
+    await exec(`curl --fail "${csvUrlOrPath}" >${tmpfile}`)
+    csv = tmpfile
+  } else {
+    csv = csvUrlOrPath
+  }
+  
+
+  const {stdout, stderr} = await execFile('npx', ['csvtojson', csv])
   //console.log(stdout);
 
   let json = JSON.parse(stdout);
