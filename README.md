@@ -29,7 +29,7 @@ $ npx ironoutline pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59i
 ```
 
 ```sh
-$ npx ironoutline ft ~/Downloads/outline-wdpt202006.csv
+$ npx ironoutline pt ~/Downloads/outline-wdpt202006par.csv
 ```
 
 NB: The json file is directly printed to stdout: to save it to disk, remember to redirect the stdout `> myoutline.json`.
