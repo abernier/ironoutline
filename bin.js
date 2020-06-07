@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+const {readFileSync} = require('fs')
+const {resolve} = require('path')
+
 const main = require('./index.js')
 
 var argv = require('minimist')(process.argv.slice(2));
@@ -11,7 +14,7 @@ const start = argv.start
 const hollidays = argv.hollidays && argv.hollidays.split(',')
 const help = argv.help
 
-const man = require('fs').readFileSync('./man.txt', {encoding: 'utf-8'});
+const man = readFileSync(resolve(__dirname, './man.txt'), {encoding: 'utf-8'});
 if (help) {
   console.log(man);
   process.exit(0);
