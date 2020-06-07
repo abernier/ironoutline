@@ -1,49 +1,12 @@
-#!/usr/bin/env node
-
-//
-// node index.js pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
-//
-
 const os = require('os')
 const exec = require('util').promisify(require('child_process').exec)
-const execFile = require('util').promisify(require('child_process').execFile)
+
+const csvtojson = require('csvtojson')
 
 const uuid = require('uuid')
 const moment = require('moment')
 
 const schedule = require('./schedule')
-
-var argv = require('minimist')(process.argv.slice(2));
-// console.log(argv);
-
-const ftpt = argv._[0] || 'ft'
-const csvUrlOrPath = argv._[1] || "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
-const start = argv.start
-const hollidays = argv.hollidays && argv.hollidays.split(',')
-const help = argv.help
-
-const man = `
-Usage: npx ironoutline [ PTFT ] [ "CSV_URL" | CSV_PATH ] [ --start=START_DATE --hollidays=HOLLIDAYS ]
-
-Generates JSON outline for md2oedx from a CSV.
-
-Example: npx ironoutline pt "${csvUrlOrPath}" --start=2020-06-02 --hollidays=2020-06-20,2020-07-04,2020-07-14,2020-08-11,2020-08-13,2020-08-15,2020-08-18,2020-08-20,2020-08-22,2020-09-19,2020-10-17,2020-11-10,2020-11-21
-
-Options:
-
-  PTFT:       ft or pt (Default: ft)
-  
-  CSV_URL:    A CSV URL where the outline is configured (Default: https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv)
-  CSV_PATH:   A CSV file path
-
-  START_DATE: The day in the format YYYY-MM-DD when the course begins
-
-  HOLLIDAYS:  A comma-separated list of days in the format YYYY-MM-DD for days-off
-`
-if (help) {
-  console.log(man);
-  process.exit(0);
-}
 
 function isUrl(str) {
   try {
@@ -57,7 +20,13 @@ function isUrl(str) {
 
 const tmpfile = `${os.tmpdir()}/${uuid.v4()}`
 
-async function main() {
+module.exports = async function (ftpt, csvUrlOrPath, options={}) {
+  if (!ftpt || !csvUrlOrPath) {
+    throw new Error('2 arguments required')
+  }
+
+  const {start, hollidays} = options;
+
   let csv;
 
   if (isUrl(csvUrlOrPath)) {
@@ -66,13 +35,8 @@ async function main() {
   } else {
     csv = csvUrlOrPath
   }
-  
 
-  const {stdout, stderr} = await execFile('npx', ['csvtojson', csv])
-  //console.log(stdout);
-
-  let json = JSON.parse(stdout);
-  //console.log(json, null, 4)
+  let json = await csvtojson().fromFile(csv);
 
   const chapter = []
 
@@ -227,10 +191,5 @@ async function main() {
     chapter.push(o1)
   })
 
-  console.log(JSON.stringify(ret, null, 4))
+  return ret;
 }
-
-main().catch(err => {
-  console.error(err)
-  process.exit(1);
-})
