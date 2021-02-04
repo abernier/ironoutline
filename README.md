@@ -13,10 +13,10 @@ $ npx ironoutline --help
 
 ## Example
 
-From a CSV [spreadsheet](https://docs.google.com/spreadsheets/d/1XGvru0SkMvTwI7Y76l3UanC0CNvV2CROtoFx2vFVI4g/edit):
+From a CSV [spreadsheet](https://docs.google.com/spreadsheets/d/1EdyLktmJA36Fzeug8NwrTQjUDt4C9wB2eoqs9E6kXK0/edit):
 
 ```sh
-$ npx ironoutline pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3uDAa59iofq3f6asa9YJoHxjzmuF0s6SoklVTeRkK7RhrZphPF9RhY1epZAgQNVPW7I8nKFjiH9e-/pub?gid=0&single=true&output=csv"
+$ npx ironoutline pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPb9g-3UgLBIrjBekCEppZ7k733mCQehR9S3OZBxafwQEuXsxkAzC4VkSzOStT6b0Dc851CyLUOc2i/pub?gid=0&single=true&output=csv"
 ```
 
 From a local file:
@@ -33,6 +33,7 @@ NB: The json file is directly printed to stdout: to save it to disk, remember to
 const ironoutline = require('ironoutline')
 
 const json = ironoutline('pt', 'path/to/outline.csv', {
+    tzid: 'Europe/Paris',
     start: '2020-06-02',
     hollidays: ['2020-06-20','2020-07-04','2020-07-14','2020-08-11','2020-08-13','2020-08-15','2020-08-18','2020-08-20','2020-08-22','2020-09-19','2020-10-17','2020-11-10','2020-11-21']
 })
@@ -58,11 +59,19 @@ JSON structure is as followed:
                         "vertical": [
                             {
                                 "name": "Foo",
-                                "html": [{"file": "foo.md"}]
-                            },
-                            {
-                                "name": "Bar",
-                                "html": [{"file": "bar.md"}]
+                                "component": [
+                                    {
+                                        "type": "html",
+                                        "file": "foo.md"
+                                    },
+                                    {
+                                        "type": "deliverable",
+                                        "display_name": "Homework",
+                                        "deliverable_identifier": "assign1",
+                                        "deliverable_description": "Your first homework is to do 100 pushups.",
+                                        "deliverable_duedate": "2030-10-28"
+                                    }
+                                ]
                             },
                             ...
                     },
@@ -73,3 +82,4 @@ JSON structure is as followed:
     }
 }
                             
+as defined per https://github.com/ironhack/md2oedx#json-file-structure
