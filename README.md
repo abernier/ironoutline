@@ -16,13 +16,13 @@ $ npx ironoutline --help
 From a CSV [spreadsheet](https://docs.google.com/spreadsheets/d/1EdyLktmJA36Fzeug8NwrTQjUDt4C9wB2eoqs9E6kXK0/edit):
 
 ```sh
-$ npx ironoutline pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPb9g-3UgLBIrjBekCEppZ7k733mCQehR9S3OZBxafwQEuXsxkAzC4VkSzOStT6b0Dc851CyLUOc2i/pub?gid=0&single=true&output=csv"
+$ npx ironoutline csv2json pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPb9g-3UgLBIrjBekCEppZ7k733mCQehR9S3OZBxafwQEuXsxkAzC4VkSzOStT6b0Dc851CyLUOc2i/pub?gid=0&single=true&output=csv"
 ```
 
 From a local file:
 
 ```sh
-$ npx ironoutline pt ~/Downloads/outline.csv
+$ npx ironoutline csv2json pt ~/Downloads/outline.csv
 ```
 
 NB: The json file is directly printed to stdout: to save it to disk, remember to redirect the stdout `> myoutline.json`.
@@ -32,7 +32,7 @@ NB: The json file is directly printed to stdout: to save it to disk, remember to
 ```js
 const ironoutline = require('ironoutline')
 
-const json = ironoutline('pt', 'path/to/outline.csv', {
+const json = ironoutline.csv2json('pt', 'path/to/outline.csv', {
     tzid: 'Europe/Paris',
     start: '2020-06-02',
     hollidays: ['2020-06-20','2020-07-04','2020-07-14','2020-08-11','2020-08-13','2020-08-15','2020-08-18','2020-08-20','2020-08-22','2020-09-19','2020-10-17','2020-11-10','2020-11-21']
