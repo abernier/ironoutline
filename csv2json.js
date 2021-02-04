@@ -127,7 +127,8 @@ module.exports = async function (ftpt, csvUrlOrPath, options={}) {
 
     const tag = el.tag ? `[${el.tag}] ` : '';
 
-    seqs[seq][vert].push({
+    // file
+    const o = {
       name: `${tag}${el.name}`,
       component: [
         {
@@ -135,7 +136,19 @@ module.exports = async function (ftpt, csvUrlOrPath, options={}) {
           file: el.file
         }
       ]
-    })
+    }
+
+    // deliverable
+    if (el.deliverable_display_name) {
+      o.component.push({
+        type: 'deliverable',
+        display_name: el.deliverable_display_name,
+        deliverable_identifier: el.deliverable_identifier || "",
+        deliverable_description: el.deliverable_description || "",
+        deliverable_duedate: el.deliverable_duedate || ""
+      })
+    }
+    seqs[seq][vert].push(o)
   });
   // console.log('seqs', seqs)
 
