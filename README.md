@@ -84,4 +84,4 @@ JSON structure is as followed:
     }
 }
                             
-as defined per https://github.com/ironhack/md2oedx#json-file-structure
+as defined per [md2oedx JSON file structure](https://github.com/ironhack/md2oedx#json-file-structure)
