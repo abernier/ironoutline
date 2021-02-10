@@ -15,6 +15,8 @@ $ npx ironoutline --help
 
 From a CSV [spreadsheet](https://docs.google.com/spreadsheets/d/1EdyLktmJA36Fzeug8NwrTQjUDt4C9wB2eoqs9E6kXK0/edit):
 
+[![](https://res.cloudinary.com/dtqr57xyj/image/upload/v1612991228/Screenshot_2021-02-10_at_22.06.28.png)](https://docs.google.com/spreadsheets/d/1EdyLktmJA36Fzeug8NwrTQjUDt4C9wB2eoqs9E6kXK0/edit)
+
 ```sh
 $ npx ironoutline csv2json pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPb9g-3UgLBIrjBekCEppZ7k733mCQehR9S3OZBxafwQEuXsxkAzC4VkSzOStT6b0Dc851CyLUOc2i/pub?gid=0&single=true&output=csv"
 ```
@@ -81,5 +83,6 @@ JSON structure is as followed:
         ]
     }
 }
-                            
-as defined per https://github.com/ironhack/md2oedx#json-file-structure
+```
+
+as defined per [`md2oedx` JSON file structure](https://github.com/ironhack/md2oedx#json-file-structure)

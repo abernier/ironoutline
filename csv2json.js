@@ -30,7 +30,7 @@ module.exports = async function (ftpt, csvUrlOrPath, options={}) {
   let csv;
 
   if (isUrl(csvUrlOrPath)) {
-    await exec(`curl --silent --fail "${csvUrlOrPath}" >${tmpfile}`)
+    await exec(`curl -L --silent --fail "${csvUrlOrPath}" >${tmpfile}`)
     csv = tmpfile
   } else {
     csv = csvUrlOrPath
