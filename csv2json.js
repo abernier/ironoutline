@@ -65,9 +65,6 @@ module.exports = async function (ftpt, csvUrlOrPath, options={}) {
 
   const seqs = {};
 
-  // filter not active lessons
-  json = json.filter(el => el[`active`] === 'TRUE')
-
   //
   // filter lessons that are not assigned to seq or vert
   //
@@ -125,11 +122,12 @@ module.exports = async function (ftpt, csvUrlOrPath, options={}) {
       seqs[seq][vert] = [];
     }
 
+    const active = el.active === 'TRUE' ? '' : '!'
     const tag = el.tag ? `[${el.tag}] ` : '';
 
     // file
     const o = {
-      name: `${tag}${el.name}`,
+      name: `${active}${tag}${el.name}`,
       component: [
         {
           type: 'html',
