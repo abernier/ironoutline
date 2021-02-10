@@ -56,10 +56,14 @@ async function json2csv(json) {
           unit[`order`] = null
           
           // Extract tag 'SELF_GUIDED' from name: ex: "[SELF_GUIDED] JS | Numbers as Data Types - Advanced Topics"
-          const matches = vert.name.match(/^\s*(!?)\s*\[([^\]]*)\].*/) // ex: "![LAB] LAB | Thinking in React"
+          const matches = vert.name.match(/^(!?)\s*\[([^\]]*)\].*/) // ex: "![LAB] LAB | Thinking in React"
           unit["tag"] = matches && matches[2] || ''
+          
           // Active if not starting with '!'
           unit[`active`] = matches && matches[1] ? 'FALSE' : 'TRUE' // 'FALSE' if starting with '!'
+          if (unit[`active`] === 'FALSE') {
+            unit["name"] = unit["name"].substr(1) // remove leading '!'
+          }
 
           // html component
           const html = vert.component.find(el => el.type === 'html')
