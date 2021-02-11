@@ -49,6 +49,12 @@ const json = ironoutline.csv2json('pt', csv, {
 console.log(json)
 ```
 
+Defaults options:
+
+|`tzid`|`'Europe/Paris'`|
+|`start`|`undefined`|
+|`hollidays`|`[]`|
+
 ## Output
 
 JSON structure is as followed:
