@@ -24,7 +24,7 @@ From a CSV [spreadsheet](https://docs.google.com/spreadsheets/d/1EdyLktmJA36Fzeu
 $ npx ironoutline csv2json pt "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPb9g-3UgLBIrjBekCEppZ7k733mCQehR9S3OZBxafwQEuXsxkAzC4VkSzOStT6b0Dc851CyLUOc2i/pub?gid=0&single=true&output=csv"
 ```
 
-From a local file:
+Or from a local file:
 
 ```sh
 $ npx ironoutline csv2json pt ~/Downloads/outline.csv
@@ -48,6 +48,14 @@ const json = ironoutline.csv2json('pt', csv, {
 })
 console.log(json)
 ```
+
+Defaults options:
+
+|Name|Value|
+|----|-----|
+|`tzid`|`'Europe/Paris'`|
+|`start`|`undefined`|
+|`hollidays`|`[]`|
 
 ## Output
 
