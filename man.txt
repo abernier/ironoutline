@@ -37,7 +37,7 @@ Examples:
 
 Arguments:
 
-  JSON_PATH:  json file path (Default to -)
+  JSON_PATH:  json file path (Default to - for stdin)
 
 
 
@@ -67,7 +67,7 @@ Arguments:
   PTFT:       ft or pt (Default: ft)
   
   CSV_URL:    A CSV URL where the outline is configured
-  CSV_PATH:   A CSV file path (Default to -)
+  CSV_PATH:   A CSV file path (Default to - for stdin)
 
 Options:
 
