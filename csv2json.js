@@ -1,42 +1,17 @@
-const os = require('os')
-const exec = require('util').promisify(require('child_process').exec)
-
 const csvtojson = require('csvtojson')
 
-const uuid = require('uuid')
 const moment = require('moment')
 
 const {dayslist} = require('ironcal')
 
-function isUrl(str) {
-  try {
-    new URL(str)
-  } catch(e) {
-    return false;
-  }
-
-  return true;
-}
-
-module.exports = async function (ftpt, csvUrlOrPath, options={}) {
-  if (!ftpt || !csvUrlOrPath) {
+module.exports = async function (ftpt, csv, options={}) {
+  if (!ftpt || !csv) {
     throw new Error('2 arguments required')
   }
 
-  const tmpfile = `${os.tmpdir()}/${uuid.v4()}`
-
   const {tzid, start, hollidays} = options;
 
-  let csv;
-
-  if (isUrl(csvUrlOrPath)) {
-    await exec(`curl -L --silent --fail "${csvUrlOrPath}" >${tmpfile}`)
-    csv = tmpfile
-  } else {
-    csv = csvUrlOrPath
-  }
-
-  let json = await csvtojson().fromFile(csv);
+  let json = await csvtojson().fromString(csv);
 
   const chapter = []
 

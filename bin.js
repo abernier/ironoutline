@@ -1,12 +1,16 @@
 #!/usr/bin/env node
-
+const os = require('os')
+const exec = require('util').promisify(require('child_process').exec)
 const {readFileSync} = require('fs')
-const {resolve, basename, extname} = require('path')
+const {resolve} = require('path')
+const readline = require('readline')
+
+const uuid = require('uuid')
 
 const {csv2json, json2csv} = require('./index.js')
 
 var argv = require('minimist')(process.argv.slice(2));
-// console.log(argv);
+// console.log('argv', argv);
 
 function help() {
   const man = readFileSync(resolve(__dirname, './man.txt'), {encoding: 'utf-8'});
@@ -19,59 +23,131 @@ if (argv.help) {
   process.exit(0);
 }
 
-//
-// parsing arguments depending on command
-//
-
-const command = argv._[0]
-if (command === 'csv2json') {
+function readStdin() {
   //
-  // npx ironoutline csv2json pt outline.csv --tzid=Europe/Paris --start=2020-06-02 --hollidays=2020-06-20,2020-07-04,2020-07-14,2020-08-11,2020-08-13,2020-08-15,2020-08-18,2020-08-20,2020-08-22,2020-09-19,2020-10-17,2020-11-10,2020-11-21
-  //
-  // or (in dev mode)
-  //
-  // node --inspect-brk bin.js csv2json pt outline.csv --tzid=Europe/Paris --start=2020-06-02 --hollidays=2020-06-20,2020-07-04,2020-07-14,2020-08-11,2020-08-13,2020-08-15,2020-08-18,2020-08-20,2020-08-22,2020-09-19,2020-10-17,2020-11-10,2020-11-21
+  // resolve with text when stdin ends
   //
 
-  const ftpt = argv._[1] || 'ft'
-  const csvUrlOrPath = argv._[2] || "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPb9g-3UgLBIrjBekCEppZ7k733mCQehR9S3OZBxafwQEuXsxkAzC4VkSzOStT6b0Dc851CyLUOc2i/pub?gid=0&single=true&output=csv"
-  const start = argv.start
-  const hollidays = argv.hollidays && argv.hollidays.split(',')
+  return new Promise(function (resolve, reject) {
+    let ret = ""
 
-  csv2json(ftpt, csvUrlOrPath, {start, hollidays}).then(ret => {
-    console.log(JSON.stringify(ret, null, 4))
-  }).catch(err => {
-    console.error(err)
-    process.exit(1);
+    //
+    // stdin > ret variable
+    //
+    process.stdin.setEncoding('utf8');
+    process.stdin.on('readable', () => {
+      let chunk
+      while ((chunk = process.stdin.read()) !== null) {
+        ret += chunk
+      }
+    });
+    process.stdin.on('end', () => {
+      resolve(ret)
+    });
+
+    var rl = readline.createInterface({
+      input: process.stdin,
+      prompt: ''
+    });
+  
+    rl.prompt()
   })
-} else if (command === 'json2csv') {
-  //
-  // npx ironoutline json2csv ft.json
-  //
-  // or (in dev mode)
-  //
-  // node --inspect-brk bin.js json2csv ft.json
-  //
+  
+}
 
-  // 'ft.json' => {name: 'ft', data: {...}}
-  const filepath = resolve(process.cwd(), argv._[1]);
-
-  const json = {
-    name: basename(filepath, extname(filepath)),
-    data: JSON.parse(readFileSync(filepath, {encoding: 'utf-8'}))
+function isUrl(str) {
+  try {
+    new URL(str)
+  } catch(e) {
+    return false;
   }
 
-  json2csv(json).then(ret => {
-    console.log(ret)
-  }).catch(err => {
-    console.error(err)
-    process.exit(1);
-  })
-
-} else {
-  help()
-  process.exit(0);
+  return true;
 }
+
+async function main(command) {
+  //
+  // parsing arguments depending on command
+  //
+
+  if (command === 'csv2json') {
+    //
+    // npx ironoutline csv2json pt wdpt202102par.csv --tzid=Europe/Paris --start=2021-02-16 --hollidays=2021-04-03,2021-05-01,2021-05-08,2021-05-13
+    //
+    // or (in dev mode)
+    //
+    // node --inspect bin.js csv2json pt wdpt202102par.csv --start=2021-02-16 --hollidays=2021-04-03,2021-05-01,2021-05-08,2021-05-13
+    //
+  
+    const ftpt = argv._[1] || 'ft'
+    let csvUrlOrPath = argv._[2] || '-'
+    const tzid = argv.tzid
+    const start = argv.start
+    const hollidays = argv.hollidays && argv.hollidays.split(',')
+
+    //
+    // If `csvUrlOrPath` is a URL => dump it to a local file
+    //
+
+    if (isUrl(csvUrlOrPath)) {
+      const tmpfile = `${os.tmpdir()}/${uuid.v4()}`
+
+      await exec(`curl -L --silent --fail "${csvUrlOrPath}" >${tmpfile}`)
+      csvUrlOrPath = tmpfile // local file becomes `csvUrlOrPath`
+    }
+    
+    //
+    // csv text
+    //
+    // Either from stdin, or from file
+    //
+
+    let csv;
+    if (csvUrlOrPath === '-') {
+      csv = await readStdin()
+    } else {
+      csv = readFileSync(csvUrlOrPath, {encoding: 'utf-8'})
+    }
+
+    // Outputs
+    const ret = await csv2json(ftpt, csv, {tzid, start, hollidays})
+    console.log(JSON.stringify(ret, null, 4))
+
+  } else if (command === 'json2csv') {
+    //
+    // npx ironoutline json2csv ft.json
+    //
+    // or (in dev mode)
+    //
+    // node --inspect bin.js json2csv -- wdpt202102par.json
+    //
+  
+    const filepath = argv._[1] || '-'
+
+    let jsontext
+    if (filepath === '-') {
+      jsontext = await readStdin()
+    } else {
+      jsontext = readFileSync(filepath, {encoding: 'utf-8'})
+    }
+    const json = JSON.parse(jsontext)
+  
+    // Outputs
+    const ret = await json2csv(json)
+    console.log(ret)
+  
+  } else {
+    help()
+    process.exit(0);
+  }
+}
+
+// Run
+const command = argv._[0]
+main(command).catch(err => {
+  console.error(err)
+  process.exit(1);
+})
 
 
 

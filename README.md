@@ -7,9 +7,12 @@ Generates an `index.json` file for [`md2oedx`](https://github.com/ironhack/md2oe
 ## Usage
 
 See:
+
 ```sh
 $ npx ironoutline --help
 ```
+
+which will outputs [`man.txt`](man.txt) file.
 
 ## Example
 
@@ -32,9 +35,13 @@ NB: The json file is directly printed to stdout: to save it to disk, remember to
 # JS api
 
 ```js
+const {readFileSync} = require('fs')
 const ironoutline = require('ironoutline')
 
-const json = ironoutline.csv2json('pt', 'path/to/outline.csv', {
+// file content
+const csv = readFileSync('path/to/outline.csv', {encoding: 'utf-8'})
+
+const json = ironoutline.csv2json('pt', csv, {
     tzid: 'Europe/Paris',
     start: '2020-06-02',
     hollidays: ['2020-06-20','2020-07-04','2020-07-14','2020-08-11','2020-08-13','2020-08-15','2020-08-18','2020-08-20','2020-08-22','2020-09-19','2020-10-17','2020-11-10','2020-11-21']

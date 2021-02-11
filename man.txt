@@ -4,7 +4,9 @@ COMMAND:
 
   json2csv  Generates a CSV to import into a spreadsheet to manipulate the course outline
   csv2json  Generates JSON outline for md2oedx from a CSV.
-  
+
+
+
 json2csv
 ===
 
@@ -12,15 +14,32 @@ Generates a CSV to import into a spreadsheet to manipulate the course outline
 
 Usage:
 
-  npx ironoutline json2csv JSON_PATH
+  npx ironoutline json2csv -- JSON_PATH|-
 
-Example:
+Examples:
 
-  npx ironoutline json2csv ft.json
+  $ npx ironoutline json2csv ~/tmp/wdpt202102par.json
+  
+  $ cat ~/tmp/wdpt202102par.json | npx ironoutline json2csv
+  
+  $ npx ironoutline json2csv
+  {
+    "course": {
+      "name": "WDPT",
+      "number": "MASTER",
+      "version": "5.0",
+      "chapter": [
+        ...
+      ]
+    }
+  }
+  ^D
 
 Arguments:
 
-  JSON_PATH:  json file path
+  JSON_PATH:  json file path (Default to -)
+
+
 
 csv2json
 ===
@@ -29,22 +48,31 @@ Generates JSON outline for md2oedx from a CSV.
 
 Usage:
 
-  npx ironoutline csv2json PTFT "CSV_URL"|CSV_PATH [ --tzid=TZID --start=START_DATE --hollidays=HOLLIDAYS ]
+  npx ironoutline csv2json PTFT [ --tzid=TZID --start=START_DATE --hollidays=HOLLIDAYS ] -- "CSV_URL"|CSV_PATH|-
 
-Example:
+Examples:
 
-  npx ironoutline csv2json pt "${csvUrlOrPath}" --start=2020-06-02 --hollidays=2020-06-20,2020-07-04,2020-07-14,2020-08-11,2020-08-13,2020-08-15,2020-08-18,2020-08-20,2020-08-22,2020-09-19,2020-10-17,2020-11-10,2020-11-21
+  $ npx ironoutline csv2json pt --start=2021-02-16 --hollidays=2021-04-03,2021-05-01,2021-05-08,2021-05-13 -- "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPb9g-3UgLBIrjBekCEppZ7k733mCQehR9S3OZBxafwQEuXsxkAzC4VkSzOStT6b0Dc851CyLUOc2i/pub?gid=0&single=true&output=csv"
+  
+  $ cat ~/tmp/wdpt202102par.csv | npx ironoutline csv2json pt --tzid=Europe/Paris
+  
+  $ npx ironoutline csv2json pt
+  name,active,seq,vert,seq_index,vert_index,order,tag,file,deliverable_display_name,deliverable_identifier,deliverable_description,deliverable_duedate
+  Code of Conduct during the bootcamp,FALSE,Tips & tricks for success,Info tabs,0,0,0,EXTRA,info/code-of-conduct.md,,,,
+  ...
+  ^D
 
 Arguments:
 
   PTFT:       ft or pt (Default: ft)
   
-  CSV_URL:    A CSV URL where the outline is configured (Default: https://docs.google.com/spreadsheets/d/e/2PACX-1vSPb9g-3UgLBIrjBekCEppZ7k733mCQehR9S3OZBxafwQEuXsxkAzC4VkSzOStT6b0Dc851CyLUOc2i/pub?gid=0&single=true&output=csv)
-  CSV_PATH:   A CSV file path
+  CSV_URL:    A CSV URL where the outline is configured
+  CSV_PATH:   A CSV file path (Default to -)
 
 Options:
 
-  TZID: The timezone name where bootcamp is located (see: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+  TZID:       The timezone name where bootcamp is located (Default to 'Europe/Paris')
+              see: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
   START_DATE: The day in the format YYYY-MM-DD when the course begins
 
