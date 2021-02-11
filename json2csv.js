@@ -43,8 +43,6 @@ async function json2csv(json) {
         })
 
         // Values from json
-        unit["name"] = vert.name
-        
         unit[`seq`] = chap.name
         unit[`vert`] = seq.name
         unit[`seq_index`] = null
@@ -52,14 +50,10 @@ async function json2csv(json) {
         unit[`order`] = null
         
         // Extract tag 'SELF_GUIDED' from name: ex: "[SELF_GUIDED] JS | Numbers as Data Types - Advanced Topics"
-        const matches = vert.name.match(/^(!?)\s*\[([^\]]*)\].*/) // ex: "![LAB] LAB | Thinking in React"
-        unit["tag"] = matches && matches[2] || ''
-        
-        // Active if not starting with '!'
+        const matches = vert.name.match(/^(!?)\s*(\[([^\]]*)\])?\s*(.*)/) // ex: "![LAB] LAB | Thinking in React"
+        unit["tag"] = matches && matches[3] || ''
+        unit["name"] = matches[4]
         unit[`active`] = matches && matches[1] ? 'FALSE' : 'TRUE' // 'FALSE' if starting with '!'
-        if (unit[`active`] === 'FALSE') {
-          unit["name"] = unit["name"].substr(1) // remove leading '!'
-        }
 
         // html component
         const html = vert.component.find(el => el.type === 'html')
