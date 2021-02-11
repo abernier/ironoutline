@@ -51,6 +51,8 @@ console.log(json)
 
 Defaults options:
 
+|Name|Value|
+|====|=====|
 |`tzid`|`'Europe/Paris'`|
 |`start`|`undefined`|
 |`hollidays`|`[]`|
