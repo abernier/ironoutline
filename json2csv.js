@@ -65,7 +65,7 @@ async function json2csv(json, options={}) {
         if (html) {
           unit["file"] = html.file
 
-          if (openlink) {
+          if (openlink && html.file.length) {
             unit["openlink"] = format(openlink, html.file)
           }
         }
