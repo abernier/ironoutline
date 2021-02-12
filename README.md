@@ -1,6 +1,10 @@
 [![NPM version](https://img.shields.io/npm/v/ironoutline.svg?style=flat)](https://www.npmjs.com/package/ironoutline)
 
-Generates an `index.json` file for [`md2oedx`](https://github.com/ironhack/md2oedx) from a CSV.
+Generates an `.json` file for [`md2oedx`](https://github.com/ironhack/md2oedx) from a CSV and reciprocally.
+
+```
+JSON <-> CSV
+```
 
 # bin
 
@@ -14,7 +18,7 @@ $ npx ironoutline --help
 
 which will outputs [`man.txt`](man.txt) file.
 
-## Example
+## `csv2json` command
 
 From a CSV [spreadsheet](https://docs.google.com/spreadsheets/d/1EdyLktmJA36Fzeug8NwrTQjUDt4C9wB2eoqs9E6kXK0/edit):
 
@@ -27,21 +31,29 @@ $ npx ironoutline csv2json pt "https://docs.google.com/spreadsheets/d/e/2PACX-1v
 Or from a local file:
 
 ```sh
-$ npx ironoutline csv2json pt ~/Downloads/outline.csv
+$ npx ironoutline csv2json pt -- ~/Downloads/outline.csv
 ```
 
 NB: The json file is directly printed to stdout: to save it to disk, remember to redirect the stdout `> myoutline.json`.
 
+## `json2csv` command
+
+```sh
+$ npx ironoutline json2csv --openlink=vscode://file//Users/abernier/ironhack/ironhack-web/lessons/modules-1-2-3/%s -- wdpt202102par.json
+```
+
 # JS api
+
+## `csv2json`
 
 ```js
 const {readFileSync} = require('fs')
-const ironoutline = require('ironoutline')
+const {csv2json} = require('ironoutline')
 
 // file content
 const csv = readFileSync('path/to/outline.csv', {encoding: 'utf-8'})
 
-const json = ironoutline.csv2json('pt', csv, {
+const json = csv2json('pt', csv, {
     tzid: 'Europe/Paris',
     start: '2020-06-02',
     hollidays: ['2020-06-20','2020-07-04','2020-07-14','2020-08-11','2020-08-13','2020-08-15','2020-08-18','2020-08-20','2020-08-22','2020-09-19','2020-10-17','2020-11-10','2020-11-21']
@@ -57,7 +69,28 @@ Defaults options:
 |`start`|`undefined`|
 |`hollidays`|`[]`|
 
-## Output
+## `json2csv`
+
+```js
+const {readFileSync} = require('fs')
+const {json2csv} = require('ironoutline')
+
+// file content
+const json = readFileSync('path/to/outline.json', {encoding: 'utf-8'})
+
+const csv = json2csv(json, {
+    openlink: 'vscode://file//Users/abernier/ironhack/ironhack-web/lessons/modules-1-2-3/%s'
+})
+console.log(csv)
+```
+
+Defaults options:
+
+|Name|Value|
+|----|-----|
+|`openlink`|`undefined`|
+
+# JSON structure
 
 JSON structure is as followed:
 
@@ -101,3 +134,11 @@ JSON structure is as followed:
 ```
 
 as defined per [`md2oedx` JSON file structure](https://github.com/ironhack/md2oedx#json-file-structure)
+
+# CSV structure
+
+CSV structure is as followed:
+
+|name|active|seq|vert|seq_index|vert_index|order|tag|file|openlink|deliverable_display_name|deliverable_identifier|deliverable_description|deliverable_duedate|
+|----|------|---|----|---------|----------|-----|---|----|--------|------------------------|----------------------|-----------------------|-------------------|
+|    |      |   |    |         |          |     |   |    |        |                        |                      |                       |                   |

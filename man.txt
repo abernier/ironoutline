@@ -14,13 +14,13 @@ Generates a CSV to import into a spreadsheet to manipulate the course outline
 
 Usage:
 
-  npx ironoutline json2csv -- JSON_PATH|-
+  npx ironoutline json2csv [ --openlink=OPENLINK ] -- JSON_PATH|-
 
 Examples:
 
   $ npx ironoutline json2csv ~/tmp/wdpt202102par.json
   
-  $ cat ~/tmp/wdpt202102par.json | npx ironoutline json2csv
+  $ cat ~/tmp/wdpt202102par.json | npx ironoutline json2csv --openlink=vscode://file//Users/abernier/ironhack/ironhack-web/lessons/modules-1-2-3/%s
   
   $ npx ironoutline json2csv
   {
@@ -38,6 +38,11 @@ Examples:
 Arguments:
 
   JSON_PATH:  json file path (Default to - for stdin)
+
+Options:
+
+  OPENLINK:   a printf-like string to print out a link to open the file
+
 
 
 

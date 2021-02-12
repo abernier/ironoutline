@@ -1,7 +1,11 @@
+const {format} = require('util')
+
 const { parseAsync } = require('json2csv');
 
-async function json2csv(json) {
+async function json2csv(json, options={}) {
   const data = json
+
+  const {openlink} = options // "vscode://file//Users/abernier/ironhack/ironhack-web/lessons/modules-1-2-3/%s"
 
   //
   // columns headers of the CSV
@@ -9,7 +13,7 @@ async function json2csv(json) {
 
   const headers = []
 
-  // name|active|seq|vert|seq_index|vert_index|order|active|seq|vert|seq_index|vert_index|order|tag|file
+  // Headers
   headers.push('name')
   headers.push(`active`)
   headers.push(`seq`)
@@ -19,6 +23,7 @@ async function json2csv(json) {
   headers.push(`order`)
   headers.push('tag')
   headers.push('file')
+  headers.push('openlink')
   headers.push('deliverable_display_name')
   headers.push('deliverable_identifier')
   headers.push('deliverable_description')
@@ -59,6 +64,10 @@ async function json2csv(json) {
         const html = vert.component.find(el => el.type === 'html')
         if (html) {
           unit["file"] = html.file
+
+          if (openlink) {
+            unit["openlink"] = format(openlink, html.file)
+          }
         }
 
         // deliverable component

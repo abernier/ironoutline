@@ -72,11 +72,7 @@ async function main(command) {
 
   if (command === 'csv2json') {
     //
-    // npx ironoutline csv2json pt wdpt202102par.csv --tzid=Europe/Paris --start=2021-02-16 --hollidays=2021-04-03,2021-05-01,2021-05-08,2021-05-13
-    //
-    // or (in dev mode)
-    //
-    // node --inspect bin.js csv2json pt wdpt202102par.csv --start=2021-02-16 --hollidays=2021-04-03,2021-05-01,2021-05-08,2021-05-13
+    // node --inspect bin.js csv2json pt --tzid=Europe/Paris --start=2021-02-16 --hollidays=2021-04-03,2021-05-01,2021-05-08,2021-05-13 -- wdpt202102par.csv
     //
   
     const ftpt = argv._[1] || 'ft'
@@ -115,11 +111,7 @@ async function main(command) {
 
   } else if (command === 'json2csv') {
     //
-    // npx ironoutline json2csv ft.json
-    //
-    // or (in dev mode)
-    //
-    // node --inspect bin.js json2csv -- wdpt202102par.json
+    // node --inspect bin.js json2csv --openlink=vscode://file//Users/abernier/ironhack/ironhack-web/lessons/modules-1-2-3/%s -- wdpt202102par.json
     //
   
     const filepath = argv._[1] || '-'
@@ -133,7 +125,9 @@ async function main(command) {
     const json = JSON.parse(jsontext)
   
     // Outputs
-    const ret = await json2csv(json)
+    const ret = await json2csv(json, {
+      openlink: argv.openlink
+    })
     console.log(ret)
   
   } else {
