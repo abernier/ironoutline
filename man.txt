@@ -41,7 +41,9 @@ Arguments:
 
 Options:
 
-  OPENLINK:   a printf-like string to print out a link to open the file
+  OPENLINK:   a printf-like string to print out a link to open the file (see: https://nodejs.org/api/util.html#util_util_format_format_args)
+                Eg: https://bitbucket.org/abernier_/ironhack-web/src/wdpt202102par/lessons/modules-1-2-3/%s?mode=edit
+                Eg: vscode://file//Users/abernier/ironhack/ironhack-web/lessons/modules-1-2-3/%s
 
 
 
