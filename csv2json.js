@@ -55,7 +55,7 @@ module.exports = async function (ftpt, csv, options={}) {
   })
 
   //
-  // order by sort by [seq_index, vert_index, order] ASC
+  // order by sort by [seq_index, vert_index] ASC
   //
   json.sort(function (a, b) {
     // see: https://stackoverflow.com/a/2784265/133327
@@ -65,18 +65,12 @@ module.exports = async function (ftpt, csv, options={}) {
 
     const vert_index1 = Number(a[`vert_index`])
     const vert_index2 = Number(b[`vert_index`])
-
-    const order1 = Number(a[`order`])
-    const order2 = Number(b[`order`])
     
     if (seq_index1 < seq_index2) return -1;
     if (seq_index1 > seq_index2) return 1;
 
     if (vert_index1 < vert_index2) return -1;
     if (vert_index1 > vert_index2) return 1;
-
-    if (order1 < order2) return -1;
-    if (order1 > order2) return 1;
 
     return 0;
   })

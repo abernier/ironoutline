@@ -67,7 +67,7 @@ Examples:
   $ cat ~/tmp/wdpt202102par.csv | npx ironoutline csv2json pt --tzid=Europe/Paris
   
   $ npx ironoutline csv2json pt
-  name,active,seq,vert,seq_index,vert_index,order,tag,file,deliverable_display_name,deliverable_identifier,deliverable_description,deliverable_duedate
+  name,active,seq,vert,seq_index,vert_index,tag,file,deliverable_display_name,deliverable_identifier,deliverable_description,deliverable_duedate
   Code of Conduct during the bootcamp,FALSE,Tips & tricks for success,Info tabs,0,0,0,EXTRA,info/code-of-conduct.md,,,,
   ...
   ^D

@@ -20,7 +20,6 @@ async function json2csv(json, options={}) {
   headers.push(`vert`)
   headers.push(`seq_index`)
   headers.push(`vert_index`)
-  headers.push(`order`)
   headers.push('tag')
   headers.push('file')
   headers.push('openlink')
@@ -52,7 +51,6 @@ async function json2csv(json, options={}) {
         unit[`vert`] = seq.name
         unit[`seq_index`] = null
         unit[`vert_index`] = null
-        unit[`order`] = null
         
         // Extract tag 'SELF_GUIDED' from name: ex: "[SELF_GUIDED] JS | Numbers as Data Types - Advanced Topics"
         const matches = vert.name.match(/^(!?)\s*(\[([^\]]*)\])?\s*(.*)/) // ex: "![LAB] LAB | Thinking in React"
