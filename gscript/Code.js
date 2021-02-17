@@ -358,7 +358,7 @@ function onEdit(e) {
   }
 
   if (isSeqEdit || isVertEdit) {
-    sort()
+    // sort()
   }
   
   //alert(activeSheet.getLastRow())
