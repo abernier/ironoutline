@@ -140,5 +140,5 @@ as defined per [`md2oedx` JSON file structure](https://github.com/ironhack/md2oe
 CSV structure is as followed:
 
 |name|active|seq|vert|seq_index|vert_index|tag|file|openlink|deliverable_display_name|deliverable_identifier|deliverable_description|deliverable_duedate|
-|----|------|---|----|---------|----------|-----|---|----|--------|------------------------|----------------------|-----------------------|-------------------|
+|----|------|---|----|---------|----------|---|----|--------|------------------------|----------------------|-----------------------|-------------------|
 |    |      |   |    |         |          |     |   |    |        |                        |                      |                       |                   |
