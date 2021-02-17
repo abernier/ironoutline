@@ -142,3 +142,13 @@ CSV structure is as followed:
 |name|active|seq|vert|seq_index|vert_index|tag|file|openlink|deliverable_display_name|deliverable_identifier|deliverable_description|deliverable_duedate|
 |----|------|---|----|---------|----------|---|----|--------|------------------------|----------------------|-----------------------|-------------------|
 |    |      |   |    |         |          |     |   |    |        |                        |                      |                       |                   |
+
+# Clasp
+
+Pre-requisite: `$ npx clasp login`
+
+To update google script, edit `gscript/*` source code then:
+
+```sh
+$ sh -c "cd gscript && npx clasp push"
+```

@@ -278,7 +278,8 @@ function onEdit(e) {
   // "seq" columns edits
   //
   
-  if (activeSheetName === "units" && col === $seq.getColumn() && row > 1) {
+  const isSeqEdit = (activeSheetName === "units" && col === $seq.getColumn() && row > 1)
+  if (isSeqEdit) {
     //alert('coucou')
     
     forEachRangeCell(range, function (cell) {
@@ -320,7 +321,8 @@ function onEdit(e) {
   // "vert" columns edits
   //
   
-  if (activeSheetName === "units" && col === $vert.getColumn() && row > 1) {
+  const isVertEdit = (activeSheetName === "units" && col === $vert.getColumn() && row > 1)
+  if (isVertEdit) {
     //alert('coucou2')
     
     forEachRangeCell(range, function (cell) {
@@ -353,6 +355,10 @@ function onEdit(e) {
         }
       }
     })
+  }
+
+  if (isSeqEdit || isVertEdit) {
+    sort()
   }
   
   //alert(activeSheet.getLastRow())
