@@ -1,0 +1,1825 @@
+---
+course:
+  name: WDPT
+  number: MASTER
+  version: "5.0"
+  chapter:
+    - name: Tips & tricks for success
+      sequential:
+        - name: Info tabs
+          vertical:
+            - name: "![EXTRA] Code of Conduct during the bootcamp"
+              component:
+                - type: html
+                  file: info/code-of-conduct.md
+            - name: "[EXTRA] Link to  the GitHub class organization"
+              component:
+                - type: html
+                  file: info/gh-class-rg.m
+            - name: "[EXTRA] Guidelines on how to submit the labs"
+              component:
+                - type: html
+                  file: info/guidelines-labs.md
+            - name: "[EXTRA] No class dates"
+              component:
+                - type: html
+                  file: info/no-class-dates.md
+            - name: "[EXTRA] Contactss"
+              component:
+                - type: html
+                  file: info/contacts.md
+            - name: "![EXTRA] Career Services"
+              component:
+                - type: html
+                  file: info/career.md
+            - name: "[EXTRA] Technical interview prep"
+              component:
+                - type: html
+                  file: other/tech-interviews.md
+            - name: "![EXTRA] Upcoming events"
+              component:
+                - type: html
+                  file: info/events.md
+        - name: Module 1
+          vertical:
+            - name: "[EXTRA] Time distribution"
+              component:
+                - type: html
+                  file: info/pt-time-dist-m1.md
+            - name: "[EXTRA] Module 1 - topics - overview"
+              component:
+                - type: html
+                  file: info/topics-m1.md
+            - name: "[EXTRA] Expectations"
+              component:
+                - type: html
+                  file: info/expectations.md
+            - name: "[EXTRA] Requirements for win-win"
+              component:
+                - type: html
+                  file: info/requirements-m1.md
+        - name: Module 2
+          vertical:
+            - name: "[EXTRA] Time distribution"
+              component:
+                - type: html
+                  file: info/pt-time-dist-m2.md
+            - name: "[EXTRA] Module 2 - topics - overview"
+              component:
+                - type: html
+                  file: info/topics-m2.md
+            - name: "[EXTRA] Expectations"
+              component:
+                - type: html
+                  file: info/expectations.md
+            - name: "[EXTRA] Requirements for win-win"
+              component:
+                - type: html
+                  file: info/requirements-m2.md
+        - name: Module 3
+          vertical:
+            - name: "[EXTRA] Time distribution"
+              component:
+                - type: html
+                  file: info/pt-time-dist-m3.md
+            - name: "[EXTRA] Module 3 - topics - overview"
+              component:
+                - type: html
+                  file: info/topics-m3.md
+            - name: "[EXTRA] Expectations"
+              component:
+                - type: html
+                  file: info/expectations.md
+            - name: "[EXTRA] Requirements for win-win"
+              component:
+                - type: html
+                  file: info/requirements-m3.md
+    - name: Week 1
+      sequential:
+        - name: Tue, Feb 16th
+          vertical:
+            - name: JS | JavaScript Intro
+              component:
+                - type: html
+                  file: module-1/week-1/js-intro.md
+            - name: JS | Data Types in JavaScript - number & string
+              component:
+                - type: html
+                  file: module-1/week-1/js-datatypes-1.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w1h1.md
+            - name: "[SELF_GUIDED] JS | Numbers as Data Types - Advanced Topics"
+              component:
+                - type: html
+                  file: module-1/week-1/numbers-advanced.md
+            - name: "[EXTRA] Welcome to Ironhack"
+              component:
+                - type: html
+                  file: md/welcome-pt.md
+        - name: Thu, Feb 18th
+          vertical:
+            - name: JS | Data Types in JavaScript - boolean, undefined & null and Immutability
+              component:
+                - type: html
+                  file: module-1/week-1/js-datatypes-2.md
+            - name: JS | Conditionals and Loops
+              component:
+                - type: html
+                  file: module-1/week-1/js-conditionals-loops.md
+            - name: VCS | Git Intro
+              component:
+                - type: html
+                  file: module-1/week-1/self-guided/git-intro.md
+            - name: Pair Programming Introduction
+              component:
+                - type: html
+                  file: module-1/week-1/self-guided/pair-programming.md
+            - name: "[SELF_GUIDED] Collaborate on a LAB"
+              component:
+                - type: html
+                  file: md/collaborate-on-lab.md
+            - name: "[LAB] LAB | JavaScript Basic Algorithms"
+              component:
+                - type: html
+                  file: module-1/labs/lab-javascript-basic-algorithms.md
+                - type: deliverable
+                  display_name: basic-algorithms
+                  deliverable_identifier: lab-javascript-basic-algorithms
+                  deliverable_description: Submit the url to your work here.
+                  deliverable_duedate: ""
+        - name: Sat, Feb 20th
+          vertical:
+            - name: JS | Functions Intro
+              component:
+                - type: html
+                  file: module-1/week-1/js-functions-intro.md
+            - name: JS | Data Types in JavaScript - Arrays
+              component:
+                - type: html
+                  file: module-1/week-1/js-arrays.md
+            - name: "[LAB] LAB | JavaScript Functions and Arrays"
+              component:
+                - type: html
+                  file: module-1/labs/lab-javascript-functions-and-arrays.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w1h3.md
+        - name: Sat, Feb 20th
+          vertical:
+            - name: HTML | Introduction
+              component:
+                - type: html
+                  file: module-1/week-1/html-intro.md
+            - name: CSS | Intro & Selectors
+              component:
+                - type: html
+                  file: module-1/week-1/css-intro.md
+            - name: "[LAB] LAB | CSS Recipes clone"
+              component:
+                - type: html
+                  file: module-1/labs/lab-css-recipes-clone.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w1h4.md
+            - name: "[KATA] CodeWars - Intro"
+              component:
+                - type: html
+                  file: module-1/week-1/self-guided/codewars.md
+    - name: Week 2
+      sequential:
+        - name: Tue, Feb 23rd
+          vertical:
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "![RITUALS] LAB Review | JavaScript Basic Algorithms"
+              component:
+                - type: html
+                  file: md/labreview-javascript-basic-algorithms.md
+            - name: JS | Data Types in JavaScript - Objects
+              component:
+                - type: html
+                  file: module-1/week-1/js-objects.md
+            - name: JS | Arrays & Objects
+              component:
+                - type: html
+                  file: module-1/week-1/js-objects-arrays.md
+            - name: "[LAB] LAB | JavaScript Clue"
+              component:
+                - type: html
+                  file: module-1/labs/lab-javascript-clue.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w2h1.md
+            - name: "[KATA] Katas"
+              component:
+                - type: html
+                  file: md/kata-01.md
+        - name: Thu, Feb 25th
+          vertical:
+            - name: "![RITUALS] LAB Review | JavaScript Functions and Arrays"
+              component:
+                - type: html
+                  file: md/labreview-javascript-functions-and-arrays.md
+            - name: CSS | Advanced Selectors
+              component:
+                - type: html
+                  file: module-1/week-1/css-advanced-selectors.md
+            - name: CSS | Transitions & Animations
+              component:
+                - type: html
+                  file: module-1/week-1/css-transitions-animations.md
+            - name: "[LAB] LAB | CSS Spotify clone"
+              component:
+                - type: html
+                  file: module-1/labs/lab-css-spotify-clone.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w2h2.md
+        - name: Sat, Feb 27th
+          vertical:
+            - name: "![KATA] CodeWars"
+              component:
+                - type: html
+                  file: module-1/week-1/self-guided/codewars.md
+            - name: "![RITUALS] LAB Review | CSS Recipes clone"
+              component:
+                - type: html
+                  file: md/labreview-css-recipes-clone.md
+            - name: JS | Functions Advanced
+              component:
+                - type: html
+                  file: module-1/week-1/js-functions-advanced.md
+            - name: JS | Arrays - Map, Reduce & Filter
+              component:
+                - type: html
+                  file: module-1/week-1/js-arrays-filter-map-reduce.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w2h3.md
+        - name: Sat, Feb 27th
+          vertical:
+            - name: JS | Arrays - Sort & Reverse
+              component:
+                - type: html
+                  file: module-1/week-1/js-arrays-sort-reverse.md
+            - name: "[LAB] LAB | Greatest movies of all time"
+              component:
+                - type: html
+                  file: module-1/labs/lab-javascript-greatest-movies.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w2h4.md
+            - name: "[SELF_GUIDED] JS | Value vs Reference and Mutable Data Types"
+              component:
+                - type: html
+                  file: module-1/week-1/value-reference-mutability.md
+    - name: Week 3
+      sequential:
+        - name: Tue, Mar 2nd
+          vertical:
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "[EXTRA] Keyboard Tips and Tricks"
+              component:
+                - type: html
+                  file: md/keyboard.md
+            - name: "![RITUALS] LAB Review | JavaScript Clue"
+              component:
+                - type: html
+                  file: md/labreview-javascript-clue.md
+            - name: JS | OOP - objects, methods and the 'this' keyword
+              component:
+                - type: html
+                  file: module-1/week-1/js-oop-1.md
+            - name: JS | OOP - class and inheritance
+              component:
+                - type: html
+                  file: module-1/week-1/js-oop-2.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w3h1.md
+            - name: "[SELF_GUIDED] JS | OOP - Function constructor vs. Class"
+              component:
+                - type: html
+                  file: module-1/week-1/js-oop-3.md
+            - name: "[KATA] Katas"
+              component:
+                - type: html
+                  file: md/kata-02.md
+        - name: Thu, Mar 4th
+          vertical:
+            - name: "[EXTRA] Career Services introduction"
+              component:
+                - type: html
+                  file: md/career-intro.md
+            - name: "![RITUALS] LAB Review | CSS Spotify clone"
+              component:
+                - type: html
+                  file: md/labreview-css-spotify-clone.md
+            - name: "[LAB] LAB | JavaScript Vikings"
+              component:
+                - type: html
+                  file: module-1/labs/lab-javascript-vikings.md
+            - name: Reinforcement session
+              component:
+                - type: html
+                  file: module-1/week-1/recap.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w3h2.md
+            - name: Semi-module retrospective
+              component:
+                - type: html
+                  file: other/module-retro.md'
+        - name: Sat, Mar 6th
+          vertical:
+            - name: "![RITUALS] LAB Review | Greatest movies of all time"
+              component:
+                - type: html
+                  file: md/labreview-javascript-greatest-movies.md
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: CSS | Box Model
+              component:
+                - type: html
+                  file: module-1/week-1/css-box-model.md
+            - name: "[SELF_GUIDED] Bonus: CSS | Positioning"
+              component:
+                - type: html
+                  file: module-1/week-1/css-positioning.md
+            - name: CSS | Responsive Web Design
+              component:
+                - type: html
+                  file: module-1/week-1/css-responsive-design.md
+            - name: CSS | Positioning and Flexbox
+              component:
+                - type: html
+                  file: module-0-prework/02-html-css/14-css-positioning-flexbox.md
+            - name: "!CSS | Flexbox"
+              component:
+                - type: html
+                  file: module-1/week-1/css-flexbox.md
+            - name: "[LAB] LAB | CSS Instagram clone"
+              component:
+                - type: html
+                  file: module-1/labs/lab-css-instagram-clone.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w3h3.md
+            - name: "[SELF_GUIDED] Bonus: LAB | CSS Flexbox Slack"
+              component:
+                - type: html
+                  file: module-1/labs/lab-css-flexbox-slack.md
+        - name: Sat, Mar 6th
+          vertical:
+            - name: "![RITUALS] LAB Review | JavaScript Vikings"
+              component:
+                - type: html
+                  file: md/labreview-javascript-vikings.md
+            - name: JS | Async & Callbacks
+              component:
+                - type: html
+                  file: module-1/week-2/js-async-callbacks.md
+            - name: "[LAB] LAB | JavaScript Chronometer"
+              component:
+                - type: html
+                  file: module-1/labs/lab-javascript-chronometer.md
+            - name: "[KATA] Katas"
+              component:
+                - type: html
+                  file: md/kata-03.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w3h4.md
+            - name: "[SELF_GUIDED] Bonus: LAB | JavaScript Koans"
+              component:
+                - type: html
+                  file: module-1/labs/lab-javascript-koans.md
+            - name: "[SELF_GUIDED] Bonus: JS | Context & Function invocation"
+              component:
+                - type: html
+                  file: module-1/week-2/js-context-function-invocation.md
+    - name: Week 4
+      sequential:
+        - name: Tue, Mar 9th
+          vertical:
+            - name: "![RITUALS] LAB Review | CSS Instagram clone"
+              component:
+                - type: html
+                  file: md/labreview-css-instagram-clone.md
+            - name: DOM | Introduction & Selectors
+              component:
+                - type: html
+                  file: module-1/week-1/dom-introduction-selectors.md
+            - name: DOM | Manipulation
+              component:
+                - type: html
+                  file: module-1/week-1/dom-manipulation.md
+            - name: "[LAB] LAB | JavaScript Chronometer"
+              component:
+                - type: html
+                  file: module-1/labs/lab-javascript-chronometer.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w4h1.md
+            - name: "[SELF_GUIDED] Bonus: DOM | Simon Game"
+              component:
+                - type: html
+                  file: module-1/week-2/simon-game.md
+        - name: Thu, Mar 11th
+          vertical:
+            - name: JS | Variable scope, hoisting and shadowing
+              component:
+                - type: html
+                  file: module-1/week-2/js-scope-hoist-shadow.md
+            - name: "[LAB] LAB | DOM Ironhack Cart"
+              component:
+                - type: html
+                  file: module-1/labs/lab-dom-ironhack-cart.md
+            - name: "[SELF_GUIDED] JS | Testing & Jasmine"
+              component:
+                - type: html
+                  file: module-1/week-2/js-testing-jasmine.md
+            - name: "[EXTRA] JS | Intro to testing with Jasmine"
+              component:
+                - type: html
+                  file: module-1/labs/lab-testing-jasmine.md
+            - name: "[SELF_GUIDED] Bonus: LAB | JavaScript Advanced Algorithms"
+              component:
+                - type: html
+                  file: module-1/labs/lab-javascript-advanced-algorithms.md
+        - name: Sat, Mar 13th
+          vertical:
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: JS | Debugging, Error Handling and JS Hint
+              component:
+                - type: html
+                  file: module-1/week-2/js-debugging.md
+            - name: "[LAB] Reinforcement - DOM: LAB | DOM Pizza Builder"
+              component:
+                - type: html
+                  file: module-1/labs/lab-dom-pizza-builder.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w4h3.md
+            - name: "!CSS | Bootstrap Docs"
+              component:
+                - type: html
+                  file: module-1/week-2/css-bootstrap-intro.md
+            - name: "[SELF_GUIDED] Bonus: CSS - Style Normalizing & Grid Systems"
+              component:
+                - type: html
+                  file: module-1/week-2/css-grid-systems.md
+            - name: "![LAB] LAB | Bootstrap Cloning Revera"
+              component:
+                - type: html
+                  file: module-1/labs/lab-bootstrap-cloning-revera.md
+        - name: Sat, Mar 13th
+          vertical:
+            - name: "![RITUALS] LAB Review | Javascript Chronometer"
+              component:
+                - type: html
+                  file: md/labreview-javascript-chronometer.md
+            - name: "![RITUALS] LAB Review | DOM Ironhack Cart"
+              component:
+                - type: html
+                  file: md/labreview-dom-ironhack-cart.md
+            - name: Lab review - reinforcement of DOM manipulation concept
+              component:
+                - type: html
+                  file: module-1/week-1/dom-reinforcement.md
+            - name: "[LAB] Reinforcement - OOP: LAB | JavaScript Memory Game"
+              component:
+                - type: html
+                  file: module-1/labs/lab-javascript-memory-game.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w4h4.md
+    - name: Week 5
+      sequential:
+        - name: Tue, Mar 16th
+          vertical:
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "[EXTRA] Talk alumni"
+              component:
+                - type: html
+                  file: md/talk01.md
+            - name: "![RITUALS] LAB Review | DOM Pizza Builder"
+              component:
+                - type: html
+                  file: md/labreview-dom-pizza-builder.md
+            - name: "[EXTRA] Bonus: LAB ironmole"
+              component:
+                - type: html
+                  file: md/lab-dom-ironmole.md
+            - name: Canvas | Intro & Basic Drawing
+              component:
+                - type: html
+                  file: module-1/week-2/canvas-intro.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w5h1.md
+        - name: Thu, Mar 18th
+          vertical:
+            - name: "![RITUALS] LAB Review | Javascript Memory Game"
+              component:
+                - type: html
+                  file: md/labreview-javascript-memory-game.md
+            - name: Canvas | Styling, Text and Images
+              component:
+                - type: html
+                  file: module-1/week-2/canvas-drawing-text-styles.md
+            - name: "[LAB] LAB | Canvas Hangman"
+              component:
+                - type: html
+                  file: module-1/labs/lab-canvas-hangman.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w5h2.md
+        - name: Sat, Mar 20th
+          vertical:
+            - name: Canvas | Basic Animations
+              component:
+                - type: html
+                  file: module-1/week-2/canvas-basic-animations.md
+            - name: Canvas | Codealong - Basic Animations
+              component:
+                - type: html
+                  file: module-1/week-2/canvas-basic-animations-codealong.md
+            - name: "[LAB] LAB | Canvas Race Car"
+              component:
+                - type: html
+                  file: module-1/labs/lab-canvas-race-car.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w5h3.md
+            - name: Lab review - reinforcement of Canvas concept
+              component:
+                - type: html
+                  file: module-1/week-1/canvas-reinforcement.md
+            - name: "[PROJECT] Project #1 Guidelines: The Game"
+              component:
+                - type: html
+                  file: module-1/project-1.md
+            - name: "[EXTRA] Juice your game!"
+              component:
+                - type: html
+                  file: module-1/week-2/juice-your-game.md
+            - name: "[RITUALS] Project planning session"
+              component:
+                - type: html
+                  file: other/project-planning.md
+            - name: "Bonus: Project Management"
+              component:
+                - type: html
+                  file: module-1/week-2/self-guided/agile-kanban.md
+            - name: VCS | Git and GitHub + GitHub Pages
+              component:
+                - type: html
+                  file: module-1/week-2/git-github-pages-deploy.md
+        - name: Sat, Mar 20th
+          vertical:
+            - name: "[SELF_GUIDED] Bonus: Canvas | Transformations and Compositing"
+              component:
+                - type: html
+                  file: module-1/week-2/canvas-transformations-compositing.md
+            - name: "[SELF_GUIDED] Bonus: Canvas | Advanced Animations"
+              component:
+                - type: html
+                  file: module-1/week-2/canvas-advanced-animations.md
+            - name: "[LAB] Bonus: LAB | Canvas Flappy Birds"
+              component:
+                - type: html
+                  file: module-1/labs/lab-canvas-flappybirds.md
+    - name: Week 6
+      sequential:
+        - name: Tue, Mar 23rd
+          vertical:
+            - name: "![RITUALS] LAB Review | Canvas Hangman"
+              component:
+                - type: html
+                  file: md/labreview-canvas-hangman.md
+            - name: "[PROJECT] Stand ups"
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "Code interview test: Anagrams"
+              component:
+                - type: html
+                  file: module-1/week-3/kata-anagrams.md
+        - name: Thu, Mar 25th
+          vertical:
+            - name: "![RITUALS] LAB Review | Canvas Race Car"
+              component:
+                - type: html
+                  file: md/labreview-canvas-race-car.md
+            - name: "![SELF_GUIDED] Bonus: Structure your code"
+              component:
+                - type: html
+                  file: module-1/week-2/self-guided/js-good-patterns.md
+            - name: "[PROJECT] Project development"
+              component:
+                - type: html
+                  file: other/project-dev.md
+        - name: Sat, Mar 27th
+          vertical:
+            - name: "[PROJECT] Stand ups"
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "Code interview test: Clocky Mc Clock-Face"
+              component:
+                - type: html
+                  file: module-1/week-3/kata-clocky-mc-clock-face.md
+        - name: Sat, Mar 27th
+          vertical:
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "[SELF_GUIDED] Bonus: Markdown and READMEs"
+              component:
+                - type: html
+                  file: module-1/week-2/self-guided/markdown-intro.md
+            - name: "[PROJECT] Project development"
+              component:
+                - type: html
+                  file: other/project-dev.md
+    - name: Week 7
+      sequential:
+        - name: Tue, Mar 30th
+          vertical:
+            - name: "[PROJECT] Stand ups"
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "Code interview test: Sorting a 2D array"
+              component:
+                - type: html
+                  file: module-1/week-3/kata-sorting-2d-array.md
+            - name: "[SELF_GUIDED] Bonus: Advanced Command Line"
+              component:
+                - type: html
+                  file: module-1/week-1/self-guided/command-line.md
+        - name: Thu, Apr 1st
+          vertical:
+            - name: "[PROJECT] Project development"
+              component:
+                - type: html
+                  file: other/project-dev.md
+            - name: "[PROJECT] Presentation practice (optional)"
+              component:
+                - type: html
+                  file: other/presentations.md
+        - name: Tue, Apr 6th
+          vertical:
+            - name: "[PROJECT] Stand ups"
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "Code interview test: TGI Friday!!"
+              component:
+                - type: html
+                  file: module-1/week-3/kata-tgi-friday.md
+        - name: Thu, Apr 8th
+          vertical:
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "[PROJECT] Project development"
+              component:
+                - type: html
+                  file: other/project-dev.md
+            - name: "[PROJECT] Presentation practice (mandatory)"
+              component:
+                - type: html
+                  file: other/presentations.md
+    - name: Week 8
+      sequential:
+        - name: Sat, Apr 10th
+          vertical:
+            - name: "[PROJECT] Project development"
+              component:
+                - type: html
+                  file: other/project-dev.md
+        - name: Sat, Apr 10th
+          vertical:
+            - name: "Presentations - Project #1"
+              component:
+                - type: html
+                  file: other/final-presentation.md
+            - name: "[RITUALS] Votes and medalists"
+              component:
+                - type: html
+                  file: md/votes-and-medalist-project1.md
+            - name: "![EXTRA] Replay"
+              component:
+                - type: html
+                  file: md/replay-w8h2.md
+        - name: Tue, Apr 13th
+          vertical:
+            - name: "[RITUALS] Project retrospective"
+              component:
+                - type: html
+                  file: other/project-retro.md
+            - name: "[RITUALS] Project feedback"
+              component:
+                - type: html
+                  file: other/project-feedback.md
+            - name: JS | Destructuring Assignment and Parameter Handling
+              component:
+                - type: html
+                  file: module-1/week-2/js-es6-advanced.md
+        - name: Thu, Apr 15th
+          vertical:
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "[RITUALS] 1on1s"
+              component:
+                - type: html
+                  file: md/1on1s-01.md
+            - name: "[RITUALS] Katas"
+              component:
+                - type: html
+                  file: md/kata-04.md
+            - name: ES6 | Promises
+              component:
+                - type: html
+                  file: module-2/week-4/js-es6-promises.md
+            - name: "![LAB] LAB | #Promise me a dinner"
+              component:
+                - type: html
+                  file: module-2/labs/lab-es6-promises.md
+            - name: "![EXTRA] Reinforcements"
+              component:
+                - type: html
+                  file: md/reinforcements-01.md
+            - name: "[SELF_GUIDED] LAB | ES6 JavaScript Koans"
+              component:
+                - type: html
+                  file: module-2/labs/lab-es6-javascript-koans.md
+    - name: Week 9
+      sequential:
+        - name: Sat, Apr 17th
+          vertical:
+            - name: How the Internet works
+              component:
+                - type: html
+                  file: module-2/week-4/self-guided/how-does-the-internet-work.md
+            - name: Node | The Internet & HTTP Server
+              component:
+                - type: html
+                  file: module-2/week-4/node-http.md
+            - name: Node | Intro & Installation
+              component:
+                - type: html
+                  file: module-2/week-4/node-npm-intro.md
+            - name: "[LAB] LAB | Intro Node"
+              component:
+                - type: html
+                  file: module-2/labs/lab-intro-node.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w9h1.md
+        - name: Sat, Apr 17th
+          vertical:
+            - name: Express | Introduction
+              component:
+                - type: html
+                  file: module-2/week-4/express-intro.md
+            - name: "[LAB] LAB | Express Basic Site"
+              component:
+                - type: html
+                  file: module-2/labs/lab-express-basic-site.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w9h2.md
+        - name: Tue, Apr 20th
+          vertical:
+            - name: Express | Dynamic Views
+              component:
+                - type: html
+                  file: module-2/week-4/express-dynamic-views.md
+            - name: Express | Layouts & Partials
+              component:
+                - type: html
+                  file: module-2/week-4/express-layouts.md
+            - name: What is an API?
+              component:
+                - type: html
+                  file: module-2/week-5/api-microservices.md
+            - name: "[LAB] LAB | IronBeers"
+              component:
+                - type: html
+                  file: module-2/labs/lab-ironbeers.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w9h3.md
+        - name: Thu, Apr 22nd
+          vertical:
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "![RITUALS] LAB Review | Intro Node"
+              component:
+                - type: html
+                  file: md/labreview-intro-node.md
+            - name: "[RITUALS] Kata Review"
+              component:
+                - type: html
+                  file: md/katareview01.md
+            - name: "[RITUALS] Protip 01"
+              component:
+                - type: html
+                  file: md/protip01.md
+            - name: MongoDB | Introduction
+              component:
+                - type: html
+                  file: module-2/week-4/mongo-intro.md
+            - name: "[SELF_GUIDED] MongoDB | Shell & CRUD operations"
+              component:
+                - type: html
+                  file: module-2/week-4/mongo-shell-crud.md
+            - name: MongoDB | MongoDB Compass CRUD Operations
+              component:
+                - type: html
+                  file: module-2/week-4/mongo-compass-crud.md
+            - name: "[LAB] LAB | MongoDB - Advanced Querying"
+              component:
+                - type: html
+                  file: module-2/labs/lab-advance-querying-mongo.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w9h4.md
+            - name: "[SELF_GUIDED] MongoDB | Indexing & Aggregation Framework"
+              component:
+                - type: html
+                  file: module-2/week-4/self-guided/mongo-advanced.md
+    - name: Week 10
+      sequential:
+        - name: Sat, Apr 24th
+          vertical:
+            - name: Mongoose | Introduction
+              component:
+                - type: html
+                  file: module-2/week-4/mongoose-intro.md
+            - name: Mongoose | Schemas, Models & Documents
+              component:
+                - type: html
+                  file: module-2/week-4/mongoose-schemas-models-documents.md
+            - name: "[LAB] LAB | Mongoose Recipes"
+              component:
+                - type: html
+                  file: module-2/labs/lab-mongoose-recipes.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w10h1.md
+        - name: Sat, Apr 24th
+          vertical:
+            - name: Reinforcement session
+              component:
+                - type: html
+                  file: module-1/week-1/recap.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w10h2.md
+        - name: Tue, Apr 27th
+          vertical:
+            - name: "[RITUALS] Kata Review"
+              component:
+                - type: html
+                  file: md/katareview02.md
+            - name: "![KATA] CodeWars"
+              component:
+                - type: html
+                  file: module-1/week-1/self-guided/codewars.md
+            - name: Express | GET Method - Route Params & Query String
+              component:
+                - type: html
+                  file: module-2/week-4/express-get-params.md
+            - name: "[LAB] LAB | Express Spotify"
+              component:
+                - type: html
+                  file: module-2/labs/lab-express-spotify.md
+        - name: Thu, Apr 29th
+          vertical:
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "[RITUALS] Protip 02"
+              component:
+                - type: html
+                  file: md/protip02.md
+            - name: "![RITUALS] LAB Review | IronBeers"
+              component:
+                - type: html
+                  file: md/labreview-ironbeers.md
+            - name: "![RITUALS] LAB Review | Advanced Querying"
+              component:
+                - type: html
+                  file: md/labreview-advance-querying-mongo.md
+            - name: Express | POST Method - Request Body
+              component:
+                - type: html
+                  file: module-2/week-4/express-post-params.md
+            - name: Lab review - reinforcement of Express GET and POST concept
+              component:
+                - type: html
+                  file: module-2/week-4/get-post-reinforcement.md
+            - name: "![SELF_GUIDED] Node | Asynchrony"
+              component:
+                - type: html
+                  file: module-2/week-4/self-guided/node-async.md
+            - name: "[RITUALS] Kata"
+              component:
+                - type: html
+                  file: md/kata-05.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w10h4.md
+    - name: Week 11
+      sequential:
+        - name: Tue, May 4th
+          vertical:
+            - name: Express | Express Generator
+              component:
+                - type: html
+                  file: module-2/week-4/express-generator.md
+            - name: Mongoose&Express | List - Read Documents
+              component:
+                - type: html
+                  file: module-2/week-4/mongoose-express-list-read.md
+            - name: "[LAB] LAB | Express Cinema"
+              component:
+                - type: html
+                  file: module-2/labs/lab-express-cinema.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w11h1.md
+        - name: Thu, May 6th
+          vertical:
+            - name: "![RITUALS] LAB Review | Express Spotify"
+              component:
+                - type: html
+                  file: md/labreview-express-spotify.md
+            - name: "[RITUALS] Kata Review"
+              component:
+                - type: html
+                  file: md/katareview03.md
+            - name: Mongoose&Express | Basic CRUD
+              component:
+                - type: html
+                  file: module-2/week-4/mongoose-express-basic-crud.md
+            - name: "![LAB] LAB | Express Drones"
+              component:
+                - type: html
+                  file: module-2/labs/lab-express-drones
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w11h2.md
+        - name: Tue, May 11th
+          vertical:
+            - name: "[LAB] LAB | Mongoose Movies & Celebrities (Part 1)"
+              component:
+                - type: html
+                  file: module-2/labs/lab-mongoose-movies.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w11h3.md
+        - name: Sat, May 15th
+          vertical:
+            - name: "[RITUALS] Survey"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: MongoDB | Data Models
+              component:
+                - type: html
+                  file: module-2/week-4/mongo-data-models.md
+            - name: Mongoose&Express | Documents Relationships
+              component:
+                - type: html
+                  file: module-2/week-4/mongoose-express-relationships-old.md
+            - name:
+                "[LAB] LAB | Mongoose Movies & Celebrities (Part 2 - from iteration
+                7)"
+              component:
+                - type: html
+                  file: module-2/labs/lab-mongoose-movies.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w11h4.md
+            - name: Lab review - reinforcement of CRUD concept
+              component:
+                - type: html
+                  file: module-2/week-4/crud-reinforcement.md
+    - name: Week 12
+      sequential:
+        - name: Sat, May 15th
+          vertical:
+            - name:
+                "[LAB] LAB | Mongoose Movies & Celebrities (Part 2 - from iteration
+                7) -- continue"
+              component:
+                - type: html
+                  file: module-2/labs/lab-mongoose-movies.md
+            - name: Node | The concern on users' security
+              component:
+                - type: html
+                  file: module-2/week-5/node-bcrypt.md
+            - name: Node | User registration
+              component:
+                - type: html
+                  file: module-2/week-5/user-registration.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w12h1.md
+        - name: Tue, May 18th
+          vertical:
+            - name: "[LAB] LAB | Express basic auth - iteration 1"
+              component:
+                - type: html
+                  file: module-2/labs/lab-express-basic-auth.md
+            - name: Node | Form validation
+              component:
+                - type: html
+                  file: module-2/week-5/form-validation.md
+            - name: Node | Basic Authentication & Sessions
+              component:
+                - type: html
+                  file: module-2/week-5/node-basic-authentication.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w12h2.md
+        - name: Thu, May 20th
+          vertical:
+            - name: "[LAB] LAB | Express basic auth - iterations 2 and 3"
+              component:
+                - type: html
+                  file: module-2/labs/lab-express-basic-auth.md
+            - name: "[SELF_GUIDED] Passport | Sign Up, Login, Logout"
+              component:
+                - type: html
+                  file: module-2/week-5/node-passport-login.md
+            - name: "[SELF_GUIDED] LAB | Authentication with passport"
+              component:
+                - type: html
+                  file: module-2/labs/lab-authentication-with-passport.md
+            - name: "[SELF_GUIDED] Passport | Security & Roles"
+              component:
+                - type: html
+                  file: module-2/week-5/node-passport-roles.md
+            - name: "[SELF_GUIDED] LAB | Passport roles"
+              component:
+                - type: html
+                  file: module-2/labs/lab-passport-roles.md
+            - name: "[SELF_GUIDED] Passport | Strategies and Social Login"
+              component:
+                - type: html
+                  file: module-2/week-5/node-passport-strategies.md
+        - name: Sat, May 22nd
+          vertical:
+            - name: "[LAB] Users to Movies&Celebrities - reinforcement of auth concept"
+              component:
+                - type: html
+                  file: module-2/week-5/node-auth-reinforcement.md
+            - name: AXIOS | GET Request
+              component:
+                - type: html
+                  file: module-2/week-5/axios-get.md
+            - name: "[LAB] Bonus: LAB | Financial data graphing"
+              component:
+                - type: html
+                  file: module-2/labs/lab-financial-data-graphing.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w12h4.md
+            - name: "[SELF_GUIDED] AXIOS | POST, PUT and DELETE request"
+              component:
+                - type: html
+                  file: module-2/week-5/axios-post-put-delete.md
+            - name: "[SELF_GUIDED] JSON Server"
+              component:
+                - type: html
+                  file: module-2/week-5/json-server.md
+            - name: "[SELF_GUIDED] LAB | AXIOS CRUD Characters"
+              component:
+                - type: html
+                  file: module-2/labs/lab-ajax-crud-characters.md
+    - name: Week 13
+      sequential:
+        - name: Sat, May 22nd
+          vertical:
+            - name: "[RITUALS] Survey week 12"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: Deploy to Heroku
+              component:
+                - type: html
+                  file: module-2/week-5/node-heroku-deploy.md
+            - name: Express | File Upload CDN
+              component:
+                - type: html
+                  file: module-2/week-5/file-upload-cdn.md
+            - name: "[LAB] Bonus: LAB | File Upload"
+              component:
+                - type: html
+                  file: module-2/labs/lab-file-upload.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w13h1.md
+            - name: "[SELF_GUIDED] Bonus: Express | File Upload"
+              component:
+                - type: html
+                  file: module-2/week-5/node-file-upload.md
+            - name: "[SELF_GUIDED] Bonus: LAB | IronRooms"
+              component:
+                - type: html
+                  file: module-2/labs/lab-express-rooms-with-reviews.md
+        - name: Tue, May 25th
+          vertical:
+            - name: VCS | Collaboration with GitHub
+              component:
+                - type: html
+                  file: module-2/week-5/git-github-collaboration.md
+            - name: "[RITUALS] Project planning session"
+              component:
+                - type: html
+                  file: other/project-planning.md
+            - name: "[PROJECT] Project #2 Guidelines: Full-stack Web Application"
+              component:
+                - type: html
+                  file: module-2/project-2.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w13h2.md
+        - name: Thu, May 27th
+          vertical:
+            - name: "![RITUALS] LAB Review | Financial data graphing"
+              component:
+                - type: html
+                  file: md/labreview-financial-data-graphing.md
+            - name: "![RITUALS] Lab review - File Upload"
+              component:
+                - type: html
+                  file: md/labreview-file-upload.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w13h3.md
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "!Code interview test: Persistent Bugger"
+              component:
+                - type: html
+                  file: module-2/week-6/kata-persistent-bugger.md
+        - name: Sat, May 29th
+          vertical:
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "[SELF_GUIDED] Software Engineering Principles"
+              component:
+                - type: html
+                  file: module-2/week-5/self-guided/software-engineering-principles.md
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+    - name: Week 14
+      sequential:
+        - name: Sat, May 29th
+          vertical:
+            - name: "[RITUALS] Survey week 13"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "Code interview test: Playing with digits"
+              component:
+                - type: html
+                  file: module-2/week-6/kata-playing-with-digits.md
+            - name: "[SELF_GUIDED] Google Maps | Geolocation"
+              component:
+                - type: html
+                  file: module-2/week-5/google-maps-geolocation.md
+        - name: Tue, Jun 1st
+          vertical:
+            - name: "[SELF_GUIDED] Google Maps & Express"
+              component:
+                - type: html
+                  file: module-2/week-5/google-maps-express.md
+            - name: "[SELF_GUIDED] LAB | Coffee and books"
+              component:
+                - type: html
+                  file: module-2/labs/lab-coffee-and-books.md
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+        - name: Thu, Jun 3rd
+          vertical:
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "Code interview test: Find the missing letter"
+              component:
+                - type: html
+                  file: module-2/week-6/kata-find-the-missing-letter.md
+            - name: "[SELF_GUIDED] Nodemailer"
+              component:
+                - type: html
+                  file: module-2/week-5/nodemailer.md
+        - name: Sat, Jun 5th
+          vertical:
+            - name: "[SELF_GUIDED] LAB | Nodemailer"
+              component:
+                - type: html
+                  file: module-2/labs/lab-nodemailer.md
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+            - name: Presentation practice (optional)
+              component:
+                - type: html
+                  file: other/presentations.md
+    - name: Week 15
+      sequential:
+        - name: Sat, Jun 5th
+          vertical:
+            - name: "[RITUALS] Survey week 14"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "Code interview test: Street Fighter 2 - Character selection"
+              component:
+                - type: html
+                  file: module-2/week-6/kata-street-fighter-2.md
+        - name: Tue, Jun 8th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+            - name: Presentation practice (mandatory)
+              component:
+                - type: html
+                  file: other/presentations.md
+        - name: Thu, Jun 10th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+        - name: Sat, Jun 12th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+    - name: Week 16
+      sequential:
+        - name: Sat, Jun 12th
+          vertical:
+            - name: "[RITUALS] Survey week 15"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+        - name: Tue, Jun 15th
+          vertical:
+            - name: "[RITUALS] Presentations - Project #2"
+              component:
+                - type: html
+                  file: other/final-presentation.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w16h2.md
+        - name: Thu, Jun 17th
+          vertical:
+            - name: Project retrospective
+              component:
+                - type: html
+                  file: module-2/week-4/retrospective.md
+            - name: "!Project feedback"
+              component:
+                - type: html
+                  file: module-3/week-7/retrospective.md
+            - name: React | Intro to React - Create React app from the scratch
+              component:
+                - type: html
+                  file: module-3/week-7/react-intro-babel-webpack.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w16h3.md
+            - name: "[LAB] LAB | Hello Ironhack"
+              component:
+                - type: html
+                  file: module-3/labs/lab-hello-ironhack.md
+        - name: Sat, Jun 19th
+          vertical:
+            - name: "[SELF_GUIDED] HOF exercises"
+              component:
+                - type: html
+                  file: module-3/week-7/hof-katas.md
+            - name: React | Create React App, JSX and React elements
+              component:
+                - type: html
+                  file: module-3/week-7/cra-jsx-elements.md
+            - name: React | Components and Props
+              component:
+                - type: html
+                  file: module-3/week-7/comps-props-intro.md
+            - name: "[LAB] LAB | Bulma"
+              component:
+                - type: html
+                  file: module-3/labs/lab-bulma-components.md
+    - name: Week 17
+      sequential:
+        - name: Sat, Jun 19th
+          vertical:
+            - name: "[RITUALS] Survey week 16"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "[LAB] LAB | React training [steps 1-7]"
+              component:
+                - type: html
+                  file: module-3/labs/lab-react-training.md
+            - name: "[SELF_GUIDED] React | Using composition in React"
+              component:
+                - type: html
+                  file: module-3/week-7/using-composition-in-react.md
+            - name: "[SELF_GUIDED] React | Composition vs. Inheritance"
+              component:
+                - type: html
+                  file: module-3/week-7/sg-composition-inheritance.md
+            - name: "[SELF_GUIDED] React | Composition and Inheritance - general concept"
+              component:
+                - type: html
+                  file: module-3/week-7/composition-inheritance-general.md
+        - name: Tue, Jun 22nd
+          vertical:
+            - name: React | State
+              component:
+                - type: html
+                  file: module-3/week-7/state.md
+        - name: Thu, Jun 24th
+          vertical:
+            - name: React | List & Keys
+              component:
+                - type: html
+                  file: module-3/week-7/list-keys.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w17h3.md
+            - name: "[LAB] LAB | React IronContacts"
+              component:
+                - type: html
+                  file: module-3/labs/lab-react-ironcontacts.md
+        - name: Sat, Jun 26th
+          vertical:
+            - name: React | Conditional Rendering
+              component:
+                - type: html
+                  file: module-3/week-7/conditional-rendering.md
+            - name: React | Forms
+              component:
+                - type: html
+                  file: module-3/week-7/forms.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w17h4.md
+    - name: Week 18
+      sequential:
+        - name: Sat, Jun 26th
+          vertical:
+            - name: "[RITUALS] Survey week 17"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "[LAB] LAB | React IronNutrition"
+              component:
+                - type: html
+                  file: module-3/labs/lab-react-ironnutrition.md
+            - name: "[EXTRA] Bonus | React SVG Icons"
+              component:
+                - type: html
+                  file: md/react-svg-icons.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w18h1.md
+        - name: Tue, Jun 29th
+          vertical:
+            - name: "[EXTRA] Ironlecture"
+              component:
+                - type: html
+                  file: md/ironlecture-gift.md
+            - name: "![RITUALS] Lab review - React IronContacts"
+              component:
+                - type: html
+                  file: md/labreview-react-ironcontacts.md
+            - name: "[EXTRA] Reinforcement | Meteo"
+              component:
+                - type: html
+                  file: md/react-meteo.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w18h2.md
+        - name: Thu, Jul 1st
+          vertical:
+            - name: React | Intro to Routing
+              component:
+                - type: html
+                  file: module-3/week-7/routing-intro.md
+            - name: React | Routing Advanced
+              component:
+                - type: html
+                  file: module-3/week-7/routing-advanced.md
+            - name: "[LAB] LAB | Wiki Countries"
+              component:
+                - type: html
+                  file: module-3/labs/lab-wiki-countries.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w18h3.md
+        - name: Sat, Jul 3rd
+          vertical:
+            - name: "!Lab review - reinforcement of state, props, forms in React"
+              component:
+                - type: html
+                  file: module-3/week-7/state-props-forms-reinforcement.md
+            - name: React | Lifting State Up
+              component:
+                - type: html
+                  file: module-3/week-7/lifting-state-up.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w18h4.md
+            - name: "[LAB] LAB | Thinking in React"
+              component:
+                - type: html
+                  file: module-3/labs/lab-thinking-in-react.md
+            - name: "[SELF_GUIDED] React | Lifting State Up - advanced"
+              component:
+                - type: html
+                  file: module-3/week-7/additional-lifting-state-up.md
+    - name: Week 19
+      sequential:
+        - name: Sat, Jul 3rd
+          vertical:
+            - name: "[RITUALS] Survey week 18"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "![RITUALS] Lab review - React IronNutrition"
+              component:
+                - type: html
+                  file: md/labreview-react-ironnutrition.md
+            - name: MasterPlan
+              component:
+                - type: html
+                  file: md/react-masterplan.md
+        - name: Tue, Jul 6th
+          vertical:
+            - name: "[RITUALS] Review - MasterPlan"
+              component:
+                - type: html
+                  file: md/react-masterplan-review.md
+            - name: React | Building the Rest API
+              component:
+                - type: html
+                  file: module-3/week-7/front-back-integration-I.md
+            - name: React | Connecting React app to the backend
+              component:
+                - type: html
+                  file: module-3/week-7/connecting-react-to-backend.md
+            - name: React | Integrating the React App
+              component:
+                - type: html
+                  file: module-3/week-7/front-back-integration-II.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w19h2.md
+        - name: Thu, Jul 8th
+          vertical:
+            - name: "[LAB] LAB | React IronBeers"
+              component:
+                - type: html
+                  file: module-3/labs/lab-react-ironbeers.md
+            - name: React | Lifecycle methods
+              component:
+                - type: html
+                  file: module-3/week-7/lifecycle-methods.md
+            - name: "[SELF_GUIDED] LAB | React Training [steps 8 and up]"
+              component:
+                - type: html
+                  file: module-3/labs/lab-react-training.md
+            - name: "[KATA] Kata | Bingo"
+              component:
+                - type: html
+                  file: md/kata-06.md
+        - name: Sat, Jul 10th
+          vertical:
+            - name: React | Authentication
+              component:
+                - type: html
+                  file: module-3/week-8/authentication.md
+            - name: "![RITUALS] Replay"
+              component:
+                - type: html
+                  file: md/replay-w19h4.md
+            - name: "[SELF_GUIDED] React & Express | File Upload"
+              component:
+                - type: html
+                  file: module-3/week-8/file-upload.md
+            - name: "[LAB] LAB | Profile App"
+              component:
+                - type: html
+                  file: module-3/labs/lab-profile-app.md
+            - name: "![SELF_GUIDED] LAB | Profile App Avatar"
+              component:
+                - type: html
+                  file: ""
+            - name: "[PROJECT] Project #3 Guidelines: MERN Web Application"
+              component:
+                - type: html
+                  file: module-3/project-3.md
+            - name: "[RITUALS] Project planning session"
+              component:
+                - type: html
+                  file: other/project-planning.md
+    - name: Week 20
+      sequential:
+        - name: Sat, Jul 10th
+          vertical:
+            - name: "[RITUALS] Survey week 19"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: "![RITUALS] Lab review - Thinking in React"
+              component:
+                - type: html
+                  file: md/labreview-thinking-in-react.md
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "!Code interview test: Scramblies"
+              component:
+                - type: html
+                  file: module-3/week-8/kata-scramblies.md
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+            - name: "!Stand ups"
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "!Code interview test: Balancing parentheses"
+              component:
+                - type: html
+                  file: module-3/week-8/kata-balancing-parentheses.md
+        - name: Tue, Jul 13th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+        - name: Thu, Jul 15th
+          vertical:
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "Code interview test: Pete the baker"
+              component:
+                - type: html
+                  file: module-3/week-8/kata-pete-the-baker.md
+        - name: Sat, Jul 17th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+    - name: Week 21
+      sequential:
+        - name: Sat, Jul 17th
+          vertical:
+            - name: "[RITUALS] Survey week 20"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: React | Deployment
+              component:
+                - type: html
+                  file: module-3/week-8/deployment.md
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+        - name: Tue, Jul 20th
+          vertical:
+            - name: "Code interview test: Directions reduction"
+              component:
+                - type: html
+                  file: module-3/week-8/kata-directions-reduction.md
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+        - name: Thu, Jul 22nd
+          vertical:
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "Code interview test: Sum of pairs"
+              component:
+                - type: html
+                  file: module-3/week-9/kata-sum-of-pairs.md
+        - name: Sat, Jul 24th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+            - name: Presentation practice (optional)
+              component:
+                - type: html
+                  file: other/presentations.md
+    - name: Week 22
+      sequential:
+        - name: Sat, Jul 24th
+          vertical:
+            - name: "[RITUALS] Survey week 21"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+            - name: "Code interview test: Don't eat the last cake"
+              component:
+                - type: html
+                  file: module-3/week-9/kata-dont-eat-last-cake.md
+        - name: Tue, Jul 27th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+            - name: Presentation practice (mandatory)
+              component:
+                - type: html
+                  file: other/presentations.md
+        - name: Thu, Jul 29th
+          vertical:
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+        - name: Sat, Jul 31st
+          vertical:
+            - name: Stand ups
+              component:
+                - type: html
+                  file: other/stand-ups.md
+    - name: Week 23
+      sequential:
+        - name: Sat, Jul 31st
+          vertical:
+            - name: "[RITUALS] Survey week 22"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: Project development
+              component:
+                - type: html
+                  file: ""
+        - name: Tue, Aug 3rd
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: ""
+        - name: Thu, Aug 5th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: ""
+        - name: Sat, Aug 7th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: ""
+    - name: Week 24
+      sequential:
+        - name: Sat, Aug 7th
+          vertical:
+            - name: "[RITUALS] Survey week 23"
+              component:
+                - type: html
+                  file: md/survey.md
+            - name: Project development
+              component:
+                - type: html
+                  file: ""
+        - name: Tue, Aug 10th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: ""
+        - name: Thu, Aug 12th
+          vertical:
+            - name: Project development
+              component:
+                - type: html
+                  file: other/project-dev.md
+        - name: Sat, Aug 14th
+          vertical:
+            - name: "Presentations - Project #3"
+              component:
+                - type: html
+                  file: other/final-presentation.md

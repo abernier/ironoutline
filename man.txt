@@ -14,7 +14,7 @@ Generates a CSV to import into a spreadsheet to manipulate the course outline
 
 Usage:
 
-  npx ironoutline json2csv [ --openlink=OPENLINK ] -- JSON_PATH|-
+  npx ironoutline json2csv [ --yaml ] [ --openlink=OPENLINK ] -- "URL"|PATH|-
 
 Examples:
 
@@ -35,11 +35,19 @@ Examples:
   }
   ^D
 
+  $ npx ironoutline json2csv -- "https://raw.githubusercontent.com/abernier/ironoutline/master/wdpt202102par.json"
+
+  $ npx ironoutline json2csv --yaml -- ~/tmp/wdpt202102par.yaml
+  $ npx ironoutline json2csv --yaml -- "https://raw.githubusercontent.com/abernier/ironoutline/master/wdpt202102par.yaml"
+
 Arguments:
 
-  JSON_PATH:  json file path (Default to - for stdin)
+  URL:   A json URL where the outline is configured
+  PATH:  A json file path (Default to - for stdin)
 
 Options:
+
+  --yaml      enable yaml to json conversion
 
   OPENLINK:   a printf-like string to print out a link to open the file (see: https://nodejs.org/api/util.html#util_util_format_format_args)
 
@@ -58,7 +66,7 @@ Generates JSON outline for md2oedx from a CSV.
 
 Usage:
 
-  npx ironoutline csv2json PTFT [ --tzid=TZID --start=START_DATE --hollidays=HOLLIDAYS ] -- "CSV_URL"|CSV_PATH|-
+  npx ironoutline csv2json PTFT [ --tzid=TZID --start=START_DATE --hollidays=HOLLIDAYS ] -- "URL"|PATH|-
 
 Examples:
 
@@ -74,10 +82,10 @@ Examples:
 
 Arguments:
 
-  PTFT:       ft or pt (Default: ft)
+  PTFT:   ft or pt (Default: ft)
   
-  CSV_URL:    A CSV URL where the outline is configured
-  CSV_PATH:   A CSV file path (Default to - for stdin)
+  URL:    A CSV URL where the outline is configured
+  PATH:   A CSV file path (Default to - for stdin)
 
 Options:
 
