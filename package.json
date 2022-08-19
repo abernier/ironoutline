@@ -17,6 +17,6 @@
     "uuid": "^8.1.0"
   },
   "devDependencies": {
-    "@google/clasp": "^2.3.0"
+    "@google/clasp": "^2.4.1"
   }
 }
