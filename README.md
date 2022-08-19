@@ -3,7 +3,7 @@
 Generates an `.json` file for [`md2oedx`](https://github.com/ironhack/md2oedx) from a CSV and reciprocally.
 
 ```
-JSON <-> CSV
+JSON/YAML <-> CSV
 ```
 
 # bin
