@@ -66,7 +66,7 @@ Generates JSON outline for md2oedx from a CSV.
 
 Usage:
 
-  npx ironoutline csv2json PTFT [ --tzid=TZID --start=START_DATE --hollidays=HOLLIDAYS ] -- "URL"|PATH|-
+  npx ironoutline csv2json PTFT [ --yaml ] [ --tzid=TZID --start=START_DATE --hollidays=HOLLIDAYS ] -- "URL"|PATH|-
 
 Examples:
 
@@ -88,6 +88,8 @@ Arguments:
   PATH:   A CSV file path (Default to - for stdin)
 
 Options:
+
+  --yaml      enable yaml output
 
   TZID:       The timezone name where bootcamp is located (Default to 'Europe/Paris')
               see: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones

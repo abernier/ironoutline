@@ -109,7 +109,13 @@ async function main(command) {
 
     // Outputs
     const ret = await csv2json(ftpt, csv, { tzid, start, hollidays });
-    console.log(JSON.stringify(ret, null, 4));
+
+    // yaml support
+    if (argv.yaml) {
+      console.log(yaml.dump(ret));
+    } else {
+      console.log(JSON.stringify(ret, null, 4));
+    }
   } else if (command === "json2csv") {
     //
     // node --inspect-brk bin.js json2csv --openlink=vscode://file//Users/abernier/ironhack/ironhack-web/lessons/modules-1-2-3/%s -- wdpt202102par.json
