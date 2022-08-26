@@ -6,7 +6,7 @@ Generates an `.json` file for [`md2oedx`](https://github.com/ironhack/md2oedx) f
 JSON/YAML <-> CSV
 ```
 
-# bin
+# cli
 
 ## Usage
 
